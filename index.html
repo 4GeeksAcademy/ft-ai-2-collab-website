@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Apple Store - Catalog</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			corePlugins: {
+				preflight: false
+			},
+			theme: {
+				extend: {
+					colors: {
+						brand: "#0071E3",
+						accent: "#34C759",
+						surface: "#E5E5EA",
+						borderSoft: "#D1D1D6",
+						textPrimary: "#1C1C1E",
+						textSecondary: "#6E6E73",
+						bgSoft: "#F5F5F7"
+					}
+				}
+			}
+		};
+</script>
+	<style>
+		:root {
+			--ap-primary: #0071E3;
+			--ap-secondary: #34C759;
+			--ap-bg: #F5F5F7;
+			--ap-white: #FFFFFF;
+			--ap-surface: #E5E5EA;
+			--ap-border: #D1D1D6;
+			--ap-text-primary: #1C1C1E;
+			--ap-text-secondary: #6E6E73;
+		}
+
+		body {
+			font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+			background: var(--ap-bg);
+			color: var(--ap-text-primary);
+		}
+
+		#ap-catalog-root a:focus-visible,
+		#ap-catalog-root button:focus-visible,
+		#ap-catalog-root select:focus-visible {
+			outline: 2px solid var(--ap-primary);
+			outline-offset: 2px;
+		}
+	</style>
+</head>
+<body>
+	<div id="ap-catalog-root" class="relative min-h-screen bg-bgSoft text-textPrimary antialiased">
+	<div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(0,113,227,0.12),transparent_34%),radial-gradient(circle_at_80%_100%,rgba(52,199,89,0.10),transparent_45%)]"></div>
+
+	<header class="px-4 pb-0 pt-5 md:px-8 lg:px-14">
+		<nav aria-label="Main navigation" class="mx-auto flex w-full max-w-7xl flex-col gap-4 rounded-[2rem] border border-borderSoft/80 bg-white/90 px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur-xl sm:px-6 md:flex-row md:items-center md:justify-between">
+			<a href="#" class="text-2xl font-semibold tracking-tight text-[#1C1C1E] md:text-3xl">Apple Store</a>
+			<ul class="grid w-full grid-cols-2 gap-x-3 gap-y-2 text-xs font-medium tracking-tight text-textSecondary sm:flex sm:w-auto sm:flex-wrap sm:items-center sm:gap-5 sm:text-sm">
+				<li><a class="transition hover:text-brand" href="#ap-catalog">Store</a></li>
+				<li><a class="transition hover:text-brand" href="#">Mac</a></li>
+				<li><a class="transition hover:text-brand" href="#">iPhone</a></li>
+				<li><a class="transition hover:text-brand" href="#">Support</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="px-4 pb-14 pt-8 md:px-8 lg:px-14">
+		<section id="ap-catalog" class="mx-auto w-full max-w-7xl rounded-[2.25rem] border border-borderSoft/70 bg-white/90 p-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-10">
+			<div class="mx-auto max-w-3xl text-center">
+				<p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Apple Product Lineup</p>
+				<h1 class="mt-3 text-4xl font-semibold leading-tight tracking-tight text-slate-900 md:text-6xl">Catalog</h1>
+				<p class="mt-4 text-sm leading-relaxed text-textSecondary md:text-base">Explore iPhone, Mac, iPad, Watch, and accessories. Filter by product family and generation to compare the latest Apple devices.</p>
+			</div>
+
+			<div role="region" aria-label="Product filters" class="mx-auto mt-8 flex max-w-5xl flex-col gap-4 rounded-3xl border border-borderSoft/70 bg-white p-4 shadow-[0_8px_24px_rgba(15,23,42,0.05)] sm:flex-row sm:flex-wrap sm:items-end sm:p-5">
+				<div class="w-full min-w-0 sm:min-w-[190px] sm:flex-1">
+					<label for="apCategoryFilter" class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-textSecondary">Product family</label>
+					<select id="apCategoryFilter" name="apCategoryFilter" class="w-full rounded-2xl border border-borderSoft bg-bgSoft px-3 py-2.5 text-sm text-textPrimary outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20">
+						<option value="all">All</option>
+					</select>
+				</div>
+
+				<div class="w-full min-w-0 sm:min-w-[170px] sm:flex-1">
+					<label for="apGenerationFilter" class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-textSecondary">Generation</label>
+					<select id="apGenerationFilter" name="apGenerationFilter" class="w-full rounded-2xl border border-borderSoft bg-bgSoft px-3 py-2.5 text-sm text-textPrimary outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20">
+						<option value="all">All</option>
+					</select>
+				</div>
+
+				<p id="apResultCount" aria-live="polite" class="w-full rounded-2xl bg-surface px-3 py-2.5 text-center text-sm font-semibold text-textPrimary sm:ml-auto sm:w-auto"></p>
+			</div>
+
+			<div id="apProductGrid" aria-live="polite" class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+		</section>
+	</main>
+
+	<footer class="px-4 pb-8 md:px-8 lg:px-14">
+		<div class="mx-auto w-full max-w-7xl rounded-3xl border border-borderSoft/80 bg-white/80 px-5 py-4 text-sm text-textSecondary shadow-[0_8px_24px_rgba(15,23,42,0.05)] backdrop-blur-xl">
+			Apple Store Preview - Discover and compare the latest Apple products.
+		</div>
+	</footer>
+	</div>
+
+	<script>
+		(() => {
+			const root = document.getElementById("ap-catalog-root");
+			if (!root) {
+				return;
+			}
+
+			const products = [
+			{ name: "iPhone 16 Pro", category: "iPhone", price: "From $999", generation: ["Latest", "Pro"] },
+			{ name: "iPhone 16", category: "iPhone", price: "From $799", generation: ["Latest", "Standard"] },
+			{ name: "MacBook Pro 14-inch", category: "Mac", price: "From $1,999", generation: ["M4", "Pro"] },
+			{ name: "MacBook Air 13-inch", category: "Mac", price: "From $1,099", generation: ["M3", "Air"] },
+			{ name: "iMac 24-inch", category: "Mac", price: "From $1,299", generation: ["M3", "Desktop"] },
+			{ name: "iPad Pro", category: "iPad", price: "From $999", generation: ["M4", "Pro"] },
+			{ name: "iPad Air", category: "iPad", price: "From $599", generation: ["M2", "Air"] },
+			{ name: "iPad mini", category: "iPad", price: "From $499", generation: ["A17 Pro", "Mini"] },
+			{ name: "Apple Watch Series 10", category: "Watch", price: "From $399", generation: ["Latest", "Standard"] },
+			{ name: "Apple Watch Ultra 2", category: "Watch", price: "From $799", generation: ["Latest", "Ultra"] },
+			{ name: "Apple Watch SE", category: "Watch", price: "From $249", generation: ["Current", "SE"] },
+			{ name: "AirPods Pro 2", category: "Audio", price: "$249", generation: ["Current", "Pro"] },
+			{ name: "AirPods 4", category: "Audio", price: "$179", generation: ["Latest", "Standard"] },
+			{ name: "AirPods Max", category: "Audio", price: "$549", generation: ["Current", "Max"] },
+			{ name: "HomePod mini", category: "Audio", price: "$99", generation: ["Current", "Home"] },
+			{ name: "Apple TV 4K", category: "TV & Home", price: "$129", generation: ["Current", "4K"] },
+			{ name: "Studio Display", category: "Accessories", price: "From $1,599", generation: ["Current", "Display"] },
+			{ name: "Magic Keyboard", category: "Accessories", price: "$299", generation: ["Current", "Input"] },
+			{ name: "Magic Trackpad", category: "Accessories", price: "$129", generation: ["Current", "Input"] },
+			{ name: "USB-C Digital AV Adapter", category: "Accessories", price: "$69", generation: ["Current", "Adapter"] }
+			];
+
+			const categoryFilter = root.querySelector("#apCategoryFilter");
+			const generationFilter = root.querySelector("#apGenerationFilter");
+			const productGrid = root.querySelector("#apProductGrid");
+			const resultCount = root.querySelector("#apResultCount");
+
+			if (!categoryFilter || !generationFilter || !productGrid || !resultCount) {
+				return;
+			}
+
+			const categories = [...new Set(products.map((product) => product.category))];
+			const generations = [...new Set(products.flatMap((product) => product.generation))];
+
+			function populateFilters() {
+				categories.forEach((category) => {
+					const option = document.createElement("option");
+					option.value = category;
+					option.textContent = category;
+					categoryFilter.appendChild(option);
+				});
+
+				generations.forEach((generation) => {
+					const option = document.createElement("option");
+					option.value = generation;
+					option.textContent = generation;
+					generationFilter.appendChild(option);
+				});
+			}
+
+			function renderProducts() {
+				const selectedCategory = categoryFilter.value;
+				const selectedGeneration = generationFilter.value;
+
+				const filteredProducts = products.filter((product) => {
+					const categoryMatch = selectedCategory === "all" || product.category === selectedCategory;
+					const generationMatch = selectedGeneration === "all" || product.generation.includes(selectedGeneration);
+					return categoryMatch && generationMatch;
+				});
+
+				productGrid.innerHTML = "";
+
+				filteredProducts.forEach((product) => {
+					const card = document.createElement("article");
+					card.className = "group rounded-3xl border border-borderSoft/80 bg-gradient-to-b from-white to-bgSoft p-5 shadow-[0_6px_18px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_14px_28px_rgba(15,23,42,0.10)]";
+
+					card.innerHTML = `
+						<p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-textSecondary">${product.category}</p>
+						<h2 class="mt-2 text-[17px] font-semibold leading-snug tracking-tight text-textPrimary">${product.name}</h2>
+						<p class="mt-3 text-sm font-semibold text-brand">${product.price}</p>
+						<p class="mt-5 text-[11px] font-semibold uppercase tracking-[0.14em] text-textSecondary">Generation tags</p>
+						<div class="mt-2 flex flex-wrap gap-2">
+							${product.generation.map((generation) => `<span class="rounded-full border border-borderSoft bg-white px-2.5 py-1 text-[11px] font-semibold text-textSecondary">${generation}</span>`).join("")}
+						</div>
+						<button class="mt-5 inline-flex items-center rounded-full bg-brand px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-[#005BB5] focus:ring-4 focus:ring-brand/20">View model</button>
+					`;
+
+					productGrid.appendChild(card);
+				});
+
+				resultCount.textContent = `${filteredProducts.length} product(s) shown`;
+			}
+
+			categoryFilter.addEventListener("change", renderProducts);
+			generationFilter.addEventListener("change", renderProducts);
+
+			populateFilters();
+			renderProducts();
+		})();
+	</script>
+</body>
+</html>
