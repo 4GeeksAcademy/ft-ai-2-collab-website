@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Maison Fil - Catalog</title>
+	<title>Apple Store - Catalog</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script>
 		tailwind.config = {
@@ -13,7 +13,8 @@
 			theme: {
 				extend: {
 					colors: {
-						brand: "#8098ff"
+						brand: "#0071E3",
+						accent: "#34C759"
 					}
 				}
 			}
@@ -21,99 +22,99 @@
 </script>
 </head>
 <body>
-	<div id="mf-catalog-root" class="relative min-h-screen bg-[#f5f5f7] font-sans text-slate-900 antialiased">
-	<div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(128,152,255,0.16),transparent_34%),radial-gradient(circle_at_80%_100%,rgba(255,255,255,0.7),transparent_45%)]"></div>
+	<div id="ap-catalog-root" class="relative min-h-screen bg-[#F5F5F7] font-sans text-[#1C1C1E] antialiased">
+	<div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(0,113,227,0.12),transparent_34%),radial-gradient(circle_at_80%_100%,rgba(52,199,89,0.10),transparent_45%)]"></div>
 
 	<header class="px-4 pb-0 pt-5 md:px-8 lg:px-14">
 		<nav aria-label="Main navigation" class="mx-auto flex w-full max-w-7xl flex-col gap-4 rounded-[2rem] border border-white/70 bg-white/70 px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.06)] backdrop-blur-xl sm:px-6 md:flex-row md:items-center md:justify-between">
-			<a href="#" class="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">Maison Fil</a>
+			<a href="#" class="text-2xl font-semibold tracking-tight text-[#1C1C1E] md:text-3xl">Apple Store</a>
 			<ul class="grid w-full grid-cols-2 gap-x-3 gap-y-2 text-xs font-medium tracking-tight text-slate-500 sm:flex sm:w-auto sm:flex-wrap sm:items-center sm:gap-5 sm:text-sm">
-				<li><a class="transition hover:text-slate-900" href="#mf-catalogue">Catalog</a></li>
-				<li><a class="transition hover:text-slate-900" href="#">New Arrivals</a></li>
-				<li><a class="transition hover:text-slate-900" href="#">Collections</a></li>
-				<li><a class="transition hover:text-slate-900" href="#">Contact</a></li>
+				<li><a class="transition hover:text-slate-900" href="#ap-catalog">Store</a></li>
+				<li><a class="transition hover:text-slate-900" href="#">Mac</a></li>
+				<li><a class="transition hover:text-slate-900" href="#">iPhone</a></li>
+				<li><a class="transition hover:text-slate-900" href="#">Support</a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<main class="px-4 pb-14 pt-8 md:px-8 lg:px-14">
-		<section id="mf-catalogue" class="mx-auto w-full max-w-7xl rounded-[2.25rem] border border-white/80 bg-white/80 p-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-10">
+		<section id="ap-catalog" class="mx-auto w-full max-w-7xl rounded-[2.25rem] border border-white/80 bg-white/80 p-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-10">
 			<div class="mx-auto max-w-3xl text-center">
-				<p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Ready-to-Wear Collection</p>
+				<p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Apple Product Lineup</p>
 				<h1 class="mt-3 text-4xl font-semibold leading-tight tracking-tight text-slate-900 md:text-6xl">Catalog</h1>
-				<p class="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">Explore the essential pieces of our Paris-inspired wardrobe. Filter by category and size to quickly find your ideal fit.</p>
+				<p class="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">Explore iPhone, Mac, iPad, Watch, and accessories. Filter by product family and generation to compare the latest Apple devices.</p>
 			</div>
 
 			<div role="region" aria-label="Product filters" class="mx-auto mt-8 flex max-w-5xl flex-col gap-4 rounded-3xl border border-slate-200/70 bg-white p-4 shadow-[0_8px_24px_rgba(15,23,42,0.05)] sm:flex-row sm:flex-wrap sm:items-end sm:p-5">
 				<div class="w-full min-w-0 sm:min-w-[190px] sm:flex-1">
-					<label for="mfCategoryFilter" class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">Category</label>
-					<select id="mfCategoryFilter" name="mfCategoryFilter" class="w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-3 py-2.5 text-sm text-slate-800 outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20">
+					<label for="apCategoryFilter" class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">Product family</label>
+					<select id="apCategoryFilter" name="apCategoryFilter" class="w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-3 py-2.5 text-sm text-slate-800 outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20">
 						<option value="all">All</option>
 					</select>
 				</div>
 
 				<div class="w-full min-w-0 sm:min-w-[170px] sm:flex-1">
-					<label for="mfSizeFilter" class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">Size</label>
-					<select id="mfSizeFilter" name="mfSizeFilter" class="w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-3 py-2.5 text-sm text-slate-800 outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20">
+					<label for="apGenerationFilter" class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">Generation</label>
+					<select id="apGenerationFilter" name="apGenerationFilter" class="w-full rounded-2xl border border-slate-200 bg-slate-50/60 px-3 py-2.5 text-sm text-slate-800 outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/20">
 						<option value="all">All</option>
 					</select>
 				</div>
 
-				<p id="mfResultCount" aria-live="polite" class="w-full rounded-2xl bg-slate-100 px-3 py-2.5 text-center text-sm font-semibold text-slate-700 sm:ml-auto sm:w-auto"></p>
+				<p id="apResultCount" aria-live="polite" class="w-full rounded-2xl bg-slate-100 px-3 py-2.5 text-center text-sm font-semibold text-slate-700 sm:ml-auto sm:w-auto"></p>
 			</div>
 
-			<div id="mfProductGrid" aria-live="polite" class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+			<div id="apProductGrid" aria-live="polite" class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
 		</section>
 	</main>
 
 	<footer class="px-4 pb-8 md:px-8 lg:px-14">
 		<div class="mx-auto w-full max-w-7xl rounded-3xl border border-white/70 bg-white/60 px-5 py-4 text-sm text-slate-500 shadow-[0_8px_24px_rgba(15,23,42,0.05)] backdrop-blur-xl">
-			Maison Fil, Paris - Contemporary French elegance.
+			Apple Store Preview - Discover and compare the latest Apple products.
 		</div>
 	</footer>
 	</div>
 
 	<script>
 		(() => {
-			const root = document.getElementById("mf-catalog-root");
+			const root = document.getElementById("ap-catalog-root");
 			if (!root) {
 				return;
 			}
 
 			const products = [
-			{ name: "Rive Gauche Blazer", category: "Jackets", price: "179 EUR", sizes: ["S", "M", "L"] },
-			{ name: "Louvre Dress", category: "Dresses", price: "145 EUR", sizes: ["XS", "S", "M"] },
-			{ name: "Marais Shirt", category: "Tops", price: "79 EUR", sizes: ["S", "M", "L", "XL"] },
-			{ name: "Bastille Trousers", category: "Bottoms", price: "99 EUR", sizes: ["S", "M", "L"] },
-			{ name: "Voltaire Trench", category: "Coats", price: "210 EUR", sizes: ["M", "L", "XL"] },
-			{ name: "Opera Skirt", category: "Bottoms", price: "89 EUR", sizes: ["XS", "S", "M"] },
-			{ name: "Montmartre Sweater", category: "Knitwear", price: "109 EUR", sizes: ["S", "M", "L"] },
-			{ name: "Saint-Honore Top", category: "Tops", price: "65 EUR", sizes: ["XS", "S", "M", "L"] },
-			{ name: "Tuileries Dress", category: "Dresses", price: "155 EUR", sizes: ["S", "M", "L"] },
-			{ name: "Seine Cardigan", category: "Knitwear", price: "92 EUR", sizes: ["M", "L", "XL"] },
-			{ name: "Republique Jacket", category: "Jackets", price: "169 EUR", sizes: ["S", "M", "L", "XL"] },
-			{ name: "Vendome Trousers", category: "Bottoms", price: "104 EUR", sizes: ["XS", "S", "M", "L"] },
-			{ name: "Concorde Coat", category: "Coats", price: "245 EUR", sizes: ["S", "M", "L"] },
-			{ name: "Sorbonne Blouse", category: "Tops", price: "74 EUR", sizes: ["XS", "S", "M"] },
-			{ name: "Belleville Dress", category: "Dresses", price: "132 EUR", sizes: ["S", "M", "L", "XL"] },
-			{ name: "Latin Skirt", category: "Bottoms", price: "83 EUR", sizes: ["XS", "S", "M", "L"] },
-			{ name: "Lumiere Knit", category: "Knitwear", price: "118 EUR", sizes: ["S", "M", "L"] },
-			{ name: "Palais Jacket", category: "Jackets", price: "186 EUR", sizes: ["M", "L", "XL"] },
-			{ name: "Faubourg Top", category: "Tops", price: "68 EUR", sizes: ["XS", "S", "M", "L"] },
-			{ name: "Orsay Coat", category: "Coats", price: "228 EUR", sizes: ["S", "M", "L", "XL"] }
+			{ name: "iPhone 16 Pro", category: "iPhone", price: "From $999", generation: ["Latest", "Pro"] },
+			{ name: "iPhone 16", category: "iPhone", price: "From $799", generation: ["Latest", "Standard"] },
+			{ name: "MacBook Pro 14-inch", category: "Mac", price: "From $1,999", generation: ["M4", "Pro"] },
+			{ name: "MacBook Air 13-inch", category: "Mac", price: "From $1,099", generation: ["M3", "Air"] },
+			{ name: "iMac 24-inch", category: "Mac", price: "From $1,299", generation: ["M3", "Desktop"] },
+			{ name: "iPad Pro", category: "iPad", price: "From $999", generation: ["M4", "Pro"] },
+			{ name: "iPad Air", category: "iPad", price: "From $599", generation: ["M2", "Air"] },
+			{ name: "iPad mini", category: "iPad", price: "From $499", generation: ["A17 Pro", "Mini"] },
+			{ name: "Apple Watch Series 10", category: "Watch", price: "From $399", generation: ["Latest", "Standard"] },
+			{ name: "Apple Watch Ultra 2", category: "Watch", price: "From $799", generation: ["Latest", "Ultra"] },
+			{ name: "Apple Watch SE", category: "Watch", price: "From $249", generation: ["Current", "SE"] },
+			{ name: "AirPods Pro 2", category: "Audio", price: "$249", generation: ["Current", "Pro"] },
+			{ name: "AirPods 4", category: "Audio", price: "$179", generation: ["Latest", "Standard"] },
+			{ name: "AirPods Max", category: "Audio", price: "$549", generation: ["Current", "Max"] },
+			{ name: "HomePod mini", category: "Audio", price: "$99", generation: ["Current", "Home"] },
+			{ name: "Apple TV 4K", category: "TV & Home", price: "$129", generation: ["Current", "4K"] },
+			{ name: "Studio Display", category: "Accessories", price: "From $1,599", generation: ["Current", "Display"] },
+			{ name: "Magic Keyboard", category: "Accessories", price: "$299", generation: ["Current", "Input"] },
+			{ name: "Magic Trackpad", category: "Accessories", price: "$129", generation: ["Current", "Input"] },
+			{ name: "USB-C Digital AV Adapter", category: "Accessories", price: "$69", generation: ["Current", "Adapter"] }
 			];
 
-			const categoryFilter = root.querySelector("#mfCategoryFilter");
-			const sizeFilter = root.querySelector("#mfSizeFilter");
-			const productGrid = root.querySelector("#mfProductGrid");
-			const resultCount = root.querySelector("#mfResultCount");
+			const categoryFilter = root.querySelector("#apCategoryFilter");
+			const generationFilter = root.querySelector("#apGenerationFilter");
+			const productGrid = root.querySelector("#apProductGrid");
+			const resultCount = root.querySelector("#apResultCount");
 
-			if (!categoryFilter || !sizeFilter || !productGrid || !resultCount) {
+			if (!categoryFilter || !generationFilter || !productGrid || !resultCount) {
 				return;
 			}
 
 			const categories = [...new Set(products.map((product) => product.category))];
-			const sizes = [...new Set(products.flatMap((product) => product.sizes))];
+			const generations = [...new Set(products.flatMap((product) => product.generation))];
 
 			function populateFilters() {
 				categories.forEach((category) => {
@@ -123,22 +124,22 @@
 					categoryFilter.appendChild(option);
 				});
 
-				sizes.forEach((size) => {
+				generations.forEach((generation) => {
 					const option = document.createElement("option");
-					option.value = size;
-					option.textContent = size;
-					sizeFilter.appendChild(option);
+					option.value = generation;
+					option.textContent = generation;
+					generationFilter.appendChild(option);
 				});
 			}
 
 			function renderProducts() {
 				const selectedCategory = categoryFilter.value;
-				const selectedSize = sizeFilter.value;
+				const selectedGeneration = generationFilter.value;
 
 				const filteredProducts = products.filter((product) => {
 					const categoryMatch = selectedCategory === "all" || product.category === selectedCategory;
-					const sizeMatch = selectedSize === "all" || product.sizes.includes(selectedSize);
-					return categoryMatch && sizeMatch;
+					const generationMatch = selectedGeneration === "all" || product.generation.includes(selectedGeneration);
+					return categoryMatch && generationMatch;
 				});
 
 				productGrid.innerHTML = "";
@@ -151,10 +152,11 @@
 						<p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">${product.category}</p>
 						<h2 class="mt-2 text-[17px] font-semibold leading-snug tracking-tight text-slate-900">${product.name}</h2>
 						<p class="mt-3 text-sm font-semibold text-brand">${product.price}</p>
-						<p class="mt-5 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">Available sizes</p>
+						<p class="mt-5 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">Generation tags</p>
 						<div class="mt-2 flex flex-wrap gap-2">
-							${product.sizes.map((size) => `<span class="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-700">${size}</span>`).join("")}
+							${product.generation.map((generation) => `<span class="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-700">${generation}</span>`).join("")}
 						</div>
+						<button class="mt-5 inline-flex items-center rounded-full bg-brand px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-[#005BB5]">View model</button>
 					`;
 
 					productGrid.appendChild(card);
@@ -164,7 +166,7 @@
 			}
 
 			categoryFilter.addEventListener("change", renderProducts);
-			sizeFilter.addEventListener("change", renderProducts);
+			generationFilter.addEventListener("change", renderProducts);
 
 			populateFilters();
 			renderProducts();
