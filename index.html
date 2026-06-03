@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CDN Starter</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional Tailwind theme extension -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navbase: "#151c24",
+              navtext: "#f3f6fa",
+              sleeve: "#adc0d3"
+            }
+          }
+        }
+      };
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="min-h-screen bg-slate-100 text-slate-900 antialiased">
+    <header class="px-4 pb-3 pt-5 sm:px-8 sm:pt-8">
+      <div class="nav-sleeve mx-auto max-w-6xl">
+        <nav aria-label="Global" class="relative overflow-hidden rounded-xl bg-navbase px-4 py-3 text-navtext sm:px-6">
+          <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <a href="#" class="inline-flex items-baseline gap-2">
+              <span class="text-xs uppercase tracking-[0.28em] text-slate-300">House</span>
+              <span class="text-lg font-semibold tracking-tight text-navtext">Atelier Row</span>
+            </a>
+
+            <form class="w-full lg:max-w-xl" role="search" aria-label="Search products">
+              <label for="site-search" class="sr-only">Search</label>
+              <div class="relative">
+                <input
+                  id="site-search"
+                  name="q"
+                  type="search"
+                  placeholder="Search shirts, blazers, trousers"
+                  class="w-full rounded-lg border border-slate-500/60 bg-slate-900/30 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-300/70 focus:border-sleeve focus:outline-none focus:ring-2 focus:ring-sleeve/40"
+                />
+              </div>
+            </form>
+
+            <div class="flex items-center gap-2 self-end lg:self-auto">
+              <button class="rounded-lg border border-slate-500/70 bg-slate-800/70 px-3 py-2 text-sm font-medium text-slate-100 transition hover:border-sleeve hover:text-white">
+                Account
+              </button>
+              <button
+                aria-label="Open account menu"
+                class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-500/70 bg-slate-800/70 text-sm font-semibold text-slate-100 transition hover:border-sleeve hover:text-white"
+              >
+                AR
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-8">
+      <section class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+        <p class="text-sm text-slate-500">Navbar prototype ready</p>
+        <h1 class="mt-2 text-3xl font-semibold text-slate-900">Next section: hero and product rails</h1>
+      </section>
+    </main>
+  </body>
+</html>
