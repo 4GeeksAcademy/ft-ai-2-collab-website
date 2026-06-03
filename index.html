@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaStore | Home</title>
+  <meta
+    name="description"
+    content="Discover premium essentials at NovaStore: new arrivals, best sellers, and refined everyday style."
+  />
+  <link rel="canonical" href="https://example.com/" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NovaStore",
+      "url": "https://example.com/",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "support@novastore.com",
+        "telephone": "+1-800-555-0140"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NovaStore",
+      "url": "https://example.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://example.com/catalog.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-[#F5F5F7] text-[#1C1C1E] antialiased [font-family:Inter,system-ui,-apple-system,sans-serif]">
+  <!-- Reusable Navbar: copy this header block to all views -->
+  <header class="sticky top-0 z-30 border-b border-[#E5E5EA] bg-white/95 backdrop-blur">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-2 rounded-md px-2 py-1 text-lg font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          aria-label="NovaStore homepage"
+        >
+          <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#0071E3] text-sm font-bold text-white">N</span>
+          <span>NovaStore</span>
+        </a>
+
+        <form class="order-3 w-full sm:order-2 sm:w-auto sm:flex-1 sm:max-w-xl" action="catalog.html" method="get">
+          <label for="site-search" class="sr-only">Search products</label>
+          <div class="relative">
+            <input
+              id="site-search"
+              name="q"
+              type="search"
+              placeholder="Search footwear, shirts, pants, accessories"
+              class="w-full rounded-xl border border-[#D1D1D6] bg-[#F5F5F7] px-4 py-2.5 text-base text-[#1C1C1E] placeholder:text-[#6E6E73] focus-visible:border-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+            />
+          </div>
+        </form>
+
+        <div class="order-2 flex items-center gap-2 sm:order-3">
+          <a
+            href="account.html"
+            class="rounded-lg border border-[#D1D1D6] bg-white px-3 py-2 text-sm font-medium text-[#1C1C1E] transition hover:border-[#0071E3] hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            Account
+          </a>
+          <a
+            href="cart.html"
+            class="rounded-lg bg-[#0071E3] px-3 py-2 text-sm font-medium text-white transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            Cart
+          </a>
+        </div>
+      </div>
+
+      <nav aria-label="Primary" class="overflow-x-auto">
+        <ul class="flex min-w-max items-center gap-2 text-sm text-[#6E6E73]">
+          <li>
+            <a class="rounded-md bg-[#E9F2FD] px-3 py-2 font-medium text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html">Catalog</a>
+          </li>
+          <li>
+            <a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=footwear">Footwear</a>
+          </li>
+          <li>
+            <a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=shirts">Shirts</a>
+          </li>
+          <li>
+            <a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=pants">Pants</a>
+          </li>
+          <li>
+            <a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=accessories">Accessories</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-14">
+      <article class="space-y-5">
+        <p class="inline-flex rounded-full bg-[#E9F8EE] px-3 py-1 text-sm font-medium text-[#1F7A3A]">Summer Campaign 2026</p>
+        <h1 class="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Refined essentials for daily movement.</h1>
+        <p class="max-w-xl text-base leading-7 text-[#6E6E73] sm:text-lg">
+          Explore lightweight footwear, tailored layers, and minimal accessories designed for comfort, durability, and modern style.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="catalog.html"
+            class="rounded-xl bg-[#0071E3] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            Shop the Collection
+          </a>
+          <a
+            href="product-view.html"
+            class="rounded-xl border border-[#D1D1D6] bg-white px-5 py-3 text-sm font-semibold text-[#1C1C1E] transition hover:border-[#0071E3] hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            View Featured Product
+          </a>
+        </div>
+      </article>
+
+      <figure class="overflow-hidden rounded-3xl border border-[#E5E5EA] bg-white shadow-sm">
+        <img
+          src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1400&q=80"
+          alt="Model wearing contemporary streetwear collection in a bright studio"
+          width="1400"
+          height="933"
+          class="h-full w-full object-cover"
+        />
+        <figcaption class="border-t border-[#E5E5EA] px-5 py-4 text-sm text-[#6E6E73]">
+          New campaign drop: breathable fabrics and modern silhouettes.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="new-arrivals" class="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-3">
+        <h2 id="new-arrivals" class="text-3xl font-semibold leading-tight tracking-tight">New arrivals</h2>
+        <a href="catalog.html?sort=new" class="text-sm font-medium text-[#0071E3] hover:text-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]">View all</a>
+      </div>
+
+      <div class="mt-5 flex gap-4 overflow-x-auto pb-3">
+        <article itemscope itemtype="https://schema.org/Product" class="min-w-[17rem] max-w-[17rem] flex-none rounded-2xl border border-[#E5E5EA] bg-white p-4 shadow-sm">
+          <img
+            itemprop="image"
+            src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=640&q=80"
+            alt="White everyday runner sneakers"
+            width="640"
+            height="640"
+            class="h-48 w-full rounded-xl object-cover"
+          />
+          <h3 itemprop="name" class="mt-4 text-xl font-semibold leading-snug">Aero Runner One</h3>
+          <p class="mt-1 text-sm text-[#6E6E73]">4.8 rating (132 reviews)</p>
+          <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="mt-2 text-lg font-semibold">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="129">129</span>
+          </p>
+          <a
+            href="product-view.html"
+            class="mt-3 inline-flex rounded-lg bg-[#0071E3] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            View Product
+          </a>
+        </article>
+
+        <article itemscope itemtype="https://schema.org/Product" class="min-w-[17rem] max-w-[17rem] flex-none rounded-2xl border border-[#E5E5EA] bg-white p-4 shadow-sm">
+          <img
+            itemprop="image"
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=640&q=80"
+            alt="Soft charcoal everyday shirt"
+            width="640"
+            height="640"
+            class="h-48 w-full rounded-xl object-cover"
+          />
+          <h3 itemprop="name" class="mt-4 text-xl font-semibold leading-snug">Core Tee Prime</h3>
+          <p class="mt-1 text-sm text-[#6E6E73]">4.7 rating (89 reviews)</p>
+          <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="mt-2 text-lg font-semibold">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="39">39</span>
+          </p>
+          <a
+            href="product-view.html"
+            class="mt-3 inline-flex rounded-lg bg-[#0071E3] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            View Product
+          </a>
+        </article>
+
+        <article itemscope itemtype="https://schema.org/Product" class="min-w-[17rem] max-w-[17rem] flex-none rounded-2xl border border-[#E5E5EA] bg-white p-4 shadow-sm">
+          <img
+            itemprop="image"
+            src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=640&q=80"
+            alt="Olive tapered utility pants"
+            width="640"
+            height="640"
+            class="h-48 w-full rounded-xl object-cover"
+          />
+          <h3 itemprop="name" class="mt-4 text-xl font-semibold leading-snug">Flex Taper Pant</h3>
+          <p class="mt-1 text-sm text-[#6E6E73]">4.9 rating (74 reviews)</p>
+          <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="mt-2 text-lg font-semibold">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="89">89</span>
+          </p>
+          <a
+            href="product-view.html"
+            class="mt-3 inline-flex rounded-lg bg-[#0071E3] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            View Product
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="best-sellers" class="mx-auto w-full max-w-7xl px-4 py-6 pb-12 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-3">
+        <h2 id="best-sellers" class="text-3xl font-semibold leading-tight tracking-tight">Best sellers</h2>
+        <a href="catalog.html?sort=popular" class="text-sm font-medium text-[#0071E3] hover:text-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]">View all</a>
+      </div>
+
+      <div class="mt-5 flex gap-4 overflow-x-auto pb-3">
+        <article itemscope itemtype="https://schema.org/Product" class="min-w-[17rem] max-w-[17rem] flex-none rounded-2xl border border-[#E5E5EA] bg-white p-4 shadow-sm">
+          <img
+            itemprop="image"
+            src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=640&q=80"
+            alt="Black leather city sneakers"
+            width="640"
+            height="640"
+            class="h-48 w-full rounded-xl object-cover"
+          />
+          <h3 itemprop="name" class="mt-4 text-xl font-semibold leading-snug">City Glide Leather</h3>
+          <p class="mt-1 text-sm text-[#6E6E73]">4.9 rating (312 reviews)</p>
+          <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="mt-2 text-lg font-semibold">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="149">149</span>
+          </p>
+          <a
+            href="product-view.html"
+            class="mt-3 inline-flex rounded-lg bg-[#0071E3] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            View Product
+          </a>
+        </article>
+
+        <article itemscope itemtype="https://schema.org/Product" class="min-w-[17rem] max-w-[17rem] flex-none rounded-2xl border border-[#E5E5EA] bg-white p-4 shadow-sm">
+          <img
+            itemprop="image"
+            src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=640&q=80"
+            alt="Cream overshirt with minimal cut"
+            width="640"
+            height="640"
+            class="h-48 w-full rounded-xl object-cover"
+          />
+          <h3 itemprop="name" class="mt-4 text-xl font-semibold leading-snug">Metro Overshirt</h3>
+          <p class="mt-1 text-sm text-[#6E6E73]">4.8 rating (241 reviews)</p>
+          <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="mt-2 text-lg font-semibold">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="99">99</span>
+          </p>
+          <a
+            href="product-view.html"
+            class="mt-3 inline-flex rounded-lg bg-[#0071E3] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            View Product
+          </a>
+        </article>
+
+        <article itemscope itemtype="https://schema.org/Product" class="min-w-[17rem] max-w-[17rem] flex-none rounded-2xl border border-[#E5E5EA] bg-white p-4 shadow-sm">
+          <img
+            itemprop="image"
+            src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=640&q=80"
+            alt="Black minimalist shoulder bag"
+            width="640"
+            height="640"
+            class="h-48 w-full rounded-xl object-cover"
+          />
+          <h3 itemprop="name" class="mt-4 text-xl font-semibold leading-snug">Daily Sling Pack</h3>
+          <p class="mt-1 text-sm text-[#6E6E73]">4.8 rating (198 reviews)</p>
+          <p itemprop="offers" itemscope itemtype="https://schema.org/Offer" class="mt-2 text-lg font-semibold">
+            <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="59">59</span>
+          </p>
+          <a
+            href="product-view.html"
+            class="mt-3 inline-flex rounded-lg bg-[#0071E3] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+          >
+            View Product
+          </a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Footer: copy this footer block to all views -->
+  <footer class="border-t border-[#E5E5EA] bg-white">
+    <div class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">
+      <section aria-labelledby="footer-categories">
+        <h2 id="footer-categories" class="text-lg font-semibold">Categories</h2>
+        <ul class="mt-3 space-y-2 text-[#6E6E73]">
+          <li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=footwear">Footwear</a></li>
+          <li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=shirts">Shirts</a></li>
+          <li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=pants">Pants</a></li>
+          <li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=accessories">Accessories</a></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="footer-legal">
+        <h2 id="footer-legal" class="text-lg font-semibold">Legal</h2>
+        <ul class="mt-3 space-y-2 text-[#6E6E73]">
+          <li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="terms-and-conditions.html">Terms and Conditions</a></li>
+          <li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="about-brand.html">About the Brand</a></li>
+          <li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="shipping.html">Shipping</a></li>
+          <li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="returns.html">Returns</a></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="footer-contact">
+        <h2 id="footer-contact" class="text-lg font-semibold">Contact</h2>
+        <address class="mt-3 not-italic text-[#6E6E73]">
+          <p>NovaStore Support</p>
+          <p class="mt-2"><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="mailto:support@novastore.com">support@novastore.com</a></p>
+          <p class="mt-2"><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="tel:+18005550140">+1 (800) 555-0140</a></p>
+          <p class="mt-2">Mon-Fri, 9:00 AM-6:00 PM</p>
+        </address>
+      </section>
+    </div>
+    <div class="border-t border-[#E5E5EA] px-4 py-4 text-center text-sm text-[#6E6E73] sm:px-6 lg:px-8">
+      © 2026 NovaStore. Built for educational prototype purposes.
+    </div>
+  </footer>
+</body>
+</html>
