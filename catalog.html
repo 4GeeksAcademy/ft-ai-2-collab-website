@@ -49,6 +49,23 @@
             </form>
 
             <div class="flex items-center gap-2 self-end lg:self-auto">
+              <button
+                id="bag-button"
+                type="button"
+                aria-label="Open bag"
+                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-500/70 bg-slate-800/70 text-slate-100 transition hover:border-sleeve hover:text-white"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4.5 w-4.5">
+                  <path d="M5 8h14l-1 12H6L5 8Z" />
+                  <path d="M9 9V7a3 3 0 1 1 6 0v2" />
+                </svg>
+                <span
+                  id="cart-count"
+                  class="absolute -right-1 -top-1 hidden min-w-[1.1rem] rounded-full bg-rose-500 px-1.5 py-0.5 text-center text-[10px] font-semibold leading-none text-white"
+                >
+                  0
+                </span>
+              </button>
               <button class="rounded-lg border border-slate-500/70 bg-slate-800/70 px-3 py-2 text-sm font-medium text-slate-100 transition hover:border-sleeve hover:text-white">
                 Account
               </button>
@@ -331,6 +348,7 @@
       const sizeFilter = document.getElementById("size-filter");
       const products = Array.from(document.querySelectorAll(".product-card"));
       const emptyState = document.getElementById("empty-state");
+      const cartCount = document.getElementById("cart-count");
 
       const previewImages = [
         "https://cdn.shopify.com/s/files/1/0030/5535/3925/files/02_Cotton_Oxford_Sky_Model_Front.jpg?v=1727254891&width=600",
@@ -392,6 +410,15 @@
       const previewActions = document.createElement("div");
       previewActions.className = "mt-5 flex justify-center";
 
+      let currentPreviewProduct = null;
+      const bagItems = [];
+
+      function updateCartCount() {
+        const totalItems = bagItems.length;
+        cartCount.textContent = String(totalItems);
+        cartCount.classList.toggle("hidden", totalItems === 0);
+      }
+
       const addToBagButton = document.createElement("button");
       addToBagButton.type = "button";
       addToBagButton.className = "rounded-lg bg-slate-900 px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-slate-700";
@@ -411,6 +438,12 @@
         previewTitle.textContent = imageAlt;
         previewDescription.textContent = productDescription;
         previewPrice.textContent = productPrice;
+        currentPreviewProduct = {
+          name: imageAlt,
+          description: productDescription,
+          price: productPrice,
+          image: imageUrl
+        };
         previewOverlay.classList.remove("hidden");
         previewOverlay.classList.add("flex");
       }
@@ -418,10 +451,17 @@
       function closePreviewWindow() {
         previewOverlay.classList.add("hidden");
         previewOverlay.classList.remove("flex");
+        currentPreviewProduct = null;
       }
 
       closePreviewButton.addEventListener("click", closePreviewWindow);
-      addToBagButton.addEventListener("click", closePreviewWindow);
+      addToBagButton.addEventListener("click", () => {
+        if (currentPreviewProduct) {
+          bagItems.push(currentPreviewProduct);
+          updateCartCount();
+        }
+        closePreviewWindow();
+      });
       previewOverlay.addEventListener("click", (event) => {
         if (event.target === previewOverlay) {
           closePreviewWindow();
