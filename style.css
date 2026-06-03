@@ -1,0 +1,26 @@
+:root {
+  --nav-sleeve-accent: #adc0d3;
+  --page-top-tint: rgba(173, 192, 211, 0.22);
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 100% 0%, var(--page-top-tint), transparent 44%),
+    radial-gradient(circle at 0% 100%, rgba(148, 163, 184, 0.12), transparent 36%);
+}
+
+.nav-sleeve {
+  position: relative;
+}
+
+.nav-sleeve::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-right: 4px solid var(--nav-sleeve-accent);
+  border-bottom: 4px solid var(--nav-sleeve-accent);
+  border-radius: 0.75rem;
+  transform: translate(6px, 6px);
+  opacity: 0.9;
+}
