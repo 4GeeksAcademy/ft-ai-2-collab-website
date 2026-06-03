@@ -24,3 +24,95 @@ body {
   transform: translate(6px, 6px);
   opacity: 0.9;
 }
+
+.checkout-page {
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(225, 229, 223, 0.62), transparent 38%),
+    radial-gradient(circle at 100% 18%, rgba(200, 211, 219, 0.45), transparent 42%),
+    linear-gradient(150deg, rgba(250, 247, 242, 1) 0%, rgba(249, 246, 239, 0.96) 50%, rgba(244, 240, 233, 0.98) 100%);
+}
+
+.checkout-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: radial-gradient(rgba(28, 38, 48, 0.18) 0.45px, transparent 0.45px);
+  background-size: 5px 5px;
+}
+
+.placeholder-block {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(128, 140, 147, 0.34);
+  background:
+    linear-gradient(130deg, rgba(232, 233, 228, 0.88), rgba(215, 221, 218, 0.5) 58%, rgba(230, 227, 220, 0.74)),
+    repeating-linear-gradient(-48deg, rgba(255, 255, 255, 0.27) 0, rgba(255, 255, 255, 0.27) 8px, rgba(209, 217, 222, 0.22) 8px, rgba(209, 217, 222, 0.22) 16px);
+}
+
+.editorial-divider {
+  border-bottom: 1px solid rgba(176, 166, 149, 0.45);
+  position: relative;
+}
+
+.editorial-divider::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 120px;
+  border-bottom: 2px solid rgba(110, 131, 117, 0.5);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(79, 106, 88, 0.65);
+  outline-offset: 2px;
+}
+
+.fade-rise {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeRise 620ms ease forwards;
+}
+
+.stagger-wrap .stagger-item {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeRise 640ms ease forwards;
+}
+
+.stagger-wrap .stagger-item:nth-child(1) {
+  animation-delay: 80ms;
+}
+
+.stagger-wrap .stagger-item:nth-child(2) {
+  animation-delay: 170ms;
+}
+
+.stagger-wrap .stagger-item:nth-child(3) {
+  animation-delay: 260ms;
+}
+
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-rise,
+  .stagger-wrap .stagger-item {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
