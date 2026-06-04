@@ -1,8 +1,0 @@
-{
-  "name": "ft-ai-2-collab-website",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "smoke:theme": "bash scripts/theme-sync-smoke.sh"
-  }
-}
