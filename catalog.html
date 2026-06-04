@@ -475,7 +475,7 @@
 
       products.forEach((product, index) => {
         const content = document.createElement("div");
-        content.className = "relative z-10 flex h-full flex-col transition duration-300 ease-out";
+        content.className = "relative z-10 flex h-full flex-col opacity-0 transition duration-300 ease-out";
 
         while (product.firstChild) {
           content.appendChild(product.firstChild);
@@ -489,18 +489,22 @@
 
         const preview = document.createElement("div");
         preview.className =
-          "pointer-events-none absolute inset-3 z-0 rounded-lg border border-white/60 bg-cover bg-center opacity-0 shadow-inner transition duration-300 ease-out";
+          "pointer-events-none absolute inset-3 z-0 rounded-lg border border-white/60 bg-cover bg-center opacity-100 shadow-inner transition duration-300 ease-out";
         preview.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.2)), url('${previewImages[index]}')`;
 
         const showPreview = () => {
-          preview.classList.remove("opacity-0");
-          content.classList.add("opacity-0");
+          preview.classList.remove("opacity-100");
+          preview.classList.add("opacity-25");
+          content.classList.remove("opacity-0");
+          content.classList.add("opacity-100");
           product.classList.add("ring-2", "ring-slate-300");
         };
 
         const hidePreview = () => {
-          preview.classList.add("opacity-0");
-          content.classList.remove("opacity-0");
+          preview.classList.remove("opacity-25");
+          preview.classList.add("opacity-100");
+          content.classList.remove("opacity-100");
+          content.classList.add("opacity-0");
           product.classList.remove("ring-2", "ring-slate-300");
         };
 
