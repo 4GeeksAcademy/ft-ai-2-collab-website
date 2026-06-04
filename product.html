@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product View</title>
+    <title>Tailwind CDN Starter</title>
 
-    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Optional Tailwind theme extension -->
+    
     <script>
       tailwind.config = {
         theme: {
@@ -63,12 +61,231 @@
         </nav>
       </div>
     </header>
-
+  
     <main class="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-8">
-      <section class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-        <p class="text-sm text-slate-500">View: Product</p>
-        <h1 class="mt-2 text-3xl font-semibold text-slate-900">Owner handoff stub</h1>
+      <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <p class="text-sm uppercase tracking-[0.2em] text-slate-500">French business casual</p>
+
+        <div class="mt-5 grid gap-10 lg:grid-cols-2">
+          <div class="rounded-xl bg-slate-50 p-5 lg:h-[640px]">
+            <img
+              src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=1200&q=80"
+              alt="Model wearing a navy wool blazer"
+              class="h-full min-h-[360px] w-full rounded-lg object-cover"
+            />
+          </div>
+          
+<!-- Product details section -->
+          <div class="flex flex-col lg:h-[640px]">
+            <p class="text-sm font-medium uppercase tracking-[0.16em] text-slate-500">Atelier Row</p>
+            <h1 id="productName" class="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Veste de Bureau - Marine</h1>
+
+            <div class="mt-4 border-b border-slate-200 pb-4">
+              <p class="italic text-2xl font-semibold text-slate-500">$189.00</p>
+            </div>
+            <div>
+              <p class="italic mt-6 text-base text-slate-600">
+                Designed with a soft shoulder and easy drape for polished weekdays that still feel relaxed.
+             </p>
+            </div>
+            <dl class="mt-6 space-y-3 text-sm text-slate-700">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                <dt class="font-medium text-slate-500">Product code</dt>
+                <dd class="font-semibold">AR-FB-2407</dd>
+              </div>
+     <!-- Product size section -->         
+              <div class="border-b border-slate-200 pb-3">
+                <dt class="font-medium text-slate-500">Size</dt>
+                <dd class="mt-2">
+                 <div class="flex flex-wrap gap-2" role="radiogroup" aria-label="Select size">
+                 
+                  <input type="radio" name="size" id="size-xxs" value="xxs" class="peer/xxs sr-only" />
+                  <label for="size-xxs" class="cursor-pointer rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-700 transition hover:border-slate-900 peer-checked/xxs:border-slate-900 peer-checked/xxs:bg-slate-500 peer-checked/xxs:text-white">XXS</label>
+
+                  <input type="radio" name="size" id="size-xs" value="xs" class="peer/xs sr-only" />
+                  <label for="size-xs" class="cursor-pointer rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-700 transition hover:border-slate-900 peer-checked/xs:border-slate-900 peer-checked/xs:bg-slate-500 peer-checked/xs:text-white">XS</label>
+                
+                  <input type="radio" name="size" id="size-s" value="s" class="peer/s sr-only" />
+                  <label for="size-s" class="cursor-pointer rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-700 transition hover:border-slate-900 peer-checked/s:border-slate-900 peer-checked/s:bg-slate-500 peer-checked/s:text-white">S</label>
+
+                  <input type="radio" name="size" id="size-m" value="m" class="peer/m sr-only" checked />
+                  <label for="size-m" class="cursor-pointer rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-700 transition hover:border-slate-900 peer-checked/m:border-slate-900 peer-checked/m:bg-slate-500 peer-checked/m:text-white">M</label>
+
+                  <input type="radio" name="size" id="size-l" value="l" class="peer/l sr-only" />
+                  <label for="size-l" class="cursor-pointer rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-700 transition hover:border-slate-900 peer-checked/l:border-slate-900 peer-checked/l:bg-slate-500 peer-checked/l:text-white">L</label>
+
+                  <input type="radio" name="size" id="size-xl" value="xl" class="peer/xl sr-only" />
+                  <label for="size-xl" class="cursor-pointer rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-700 transition hover:border-slate-900 peer-checked/xl:border-slate-900 peer-checked/xl:bg-slate-500 peer-checked/xl:text-white">XL</label>
+
+                  <input type="radio" name="size" id="size-xxl" value="xxl" class="peer/xxl sr-only" />
+                  <label for="size-xxl" class="cursor-pointer rounded-md border border-slate-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-slate-700 transition hover:border-slate-900 peer-checked/xxl:border-slate-900 peer-checked/xxl:bg-slate-500 peer-checked/xxl:text-white">XXL</label>
+                </div>
+                </dd>
+              </div>
+            </dl>
+
+          <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+          <div class="w-auto flex items-center gap-2">
+          <label for="quantity" class="text-sm font-medium text-slate-500">Quantity:</label>
+          <input
+              id="quantity"
+              name="quantity"
+              type="number"
+              min="1"
+              max="10"
+              value="1"
+              class="h-11 w-14 rounded-lg border border-slate-300 bg-white px-3 text-center text-sm font-semibold text-slate-900 focus:border-navbase focus:outline-none focus:ring-2 focus:ring-navbase/20"
+            />
+          </div>
+              <button id="addToCartBtn"
+                type="button"
+                class="h-11 flex-1 rounded-lg border border-slate-300 px-6 text-sm font-semibold uppercase tracking-[0.12em] text-slate-900 transition hover:bg-slate-500"
+              >
+                Add to cart
+              </button>
+            </div>
+
+            <section class="mt-8 flex-1 min-h-0 overflow-y-auto rounded-xl border border-slate-200 bg-slate-50 p-4">
+  
+  <!-- Two Columns Button Track Grid Container -->
+  <div class="grid grid-cols-2 gap-2 rounded-lg bg-white p-1">
+    
+    <!-- Button 1 (Active Slate Style by Default) -->
+    <button
+      type="button"
+      id="tab-btn-details"
+      data-tab-target="tab-panel-details"
+      class="underline tab-trigger rounded-md px-3 py-2 text-sm font-semibold hover:bg-slate-500 text-slate-900 transition-colors duration-200"
+    >
+     Product details
+    </button>
+
+    <!-- Button 2 (Inactive Neutral Style by Default) -->
+    <button
+      type="button"
+      id="tab-btn-materials"
+      data-tab-target="tab-panel-materials"
+      class="underline tab-trigger rounded-md px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-500 transition-colors duration-200"
+    >
+      Materials
+    </button>
+  </div>
+
+  <div class="mt-4 px-1">
+  
+    <div id="tab-panel-details" class="tab-panel text-sm text-slate-700">
+      <ul class="space-y-2 pl-2" style="list-style-type: '- ';">
+        <li>Soft-shoulder silhouette</li>
+        <li>Regular fit through chest and waist</li>
+        <li>Two-button closure </li>
+        <li>Double back vent</li>
+      </ul>
+    </div>
+
+    
+    <div id="tab-panel-materials" class="tab-panel hidden text-sm text-slate-700">
+      <ul class="space-y-2 pl-2" style="list-style-type: '- ';">
+        <li>Shell: 58% wool, 38% cotton, 4% elastane</li>
+        <li>Lining: 100% recycled viscose</li>
+        <li>Wash at or below 30°C </li>
+      </ul>
+    </div>
+    
+  </div>
+</section>
+            
+          </div>
+        </div>
+
+        <section class="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-6">
+          <h2 class="text-lg font-semibold text-slate-700">Styling Suggestions</h2>
+          <p class="italic mt-6 text-base text-slate-600">
+            "Tailored to move seamlessly through your week. Dress it up for crucial client presentations 
+            with a white Oxford and loafers, dress it down for creative office days with 
+            a knit polo and chinos, or take it to after-work drinks over dark denim. When travel calls,
+             it packs effortlessly alongside your go-to wrinkle-resistant trousers."
+          </p>
+        </section>
+
+        <section class="mt-10 border-t border-slate-200 pt-8">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <h2 class="text-2xl font-semibold tracking-tight text-slate-900">From the catalog</h2>
+            <p class="text-sm text-slate-500">Product list aligned with the catalog grid style</p>
+          </div>
+
+          <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=900&q=80"
+                alt="White oxford shirt"
+                class="h-44 w-full rounded-lg object-cover"
+              />
+              <h3 class="mt-3 text-sm font-semibold text-slate-900">Chemise Oxford Blanche</h3>
+              <p class="mt-1 text-xs text-slate-500">Code AR-SH-101</p>
+              <p class="mt-2 text-sm font-semibold text-slate-900">EUR 79.00</p>
+            </article>
+
+            <article class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=900&q=80"
+                alt="Sand chino trousers"
+                class="h-44 w-full rounded-lg object-cover"
+              />
+              <h3 class="mt-3 text-sm font-semibold text-slate-900">Pantalon Chino Sable</h3>
+              <p class="mt-1 text-xs text-slate-500">Code AR-TR-224</p>
+              <p class="mt-2 text-sm font-semibold text-slate-900">EUR 95.00</p>
+            </article>
+
+            <article class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80"
+                alt="Navy knit polo"
+                class="h-44 w-full rounded-lg object-cover"
+              />
+              <h3 class="mt-3 text-sm font-semibold text-slate-900">Polo Maille Marine</h3>
+              <p class="mt-1 text-xs text-slate-500">Code AR-PO-305</p>
+              <p class="mt-2 text-sm font-semibold text-slate-900">EUR 68.00</p>
+            </article>
+
+            <article class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80"
+                alt="Black leather derby shoes"
+                class="h-44 w-full rounded-lg object-cover"
+              />
+              <h3 class="mt-3 text-sm font-semibold text-slate-900">Derbies Cuir Noir</h3>
+              <p class="mt-1 text-xs text-slate-500">Code AR-SH-412</p>
+              <p class="mt-2 text-sm font-semibold text-slate-900">EUR 149.00</p>
+            </article>
+          </div>
+        </section>
       </section>
     </main>
+
+    <script>
+      const tabButtons = document.querySelectorAll(".tab-trigger");
+      const tabPanels = document.querySelectorAll(".tab-panel");
+
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const target = button.getAttribute("data-tab-target");
+
+          tabButtons.forEach((btn) => {
+            btn.classList.remove("bg-navbase", "text-navtext");
+            btn.classList.add("text-slate-600");
+          });
+
+          tabPanels.forEach((panel) => {
+            panel.classList.add("hidden");
+          });
+
+          button.classList.add("bg-navbase", "text-navtext");
+          button.classList.remove("text-slate-600");
+
+          const panel = document.getElementById(target);
+          if (panel) panel.classList.remove("hidden");
+        });
+      });
+    </script>
   </body>
 </html>
