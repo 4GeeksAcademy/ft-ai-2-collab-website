@@ -65,10 +65,156 @@
     </header>
 
     <main class="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-8">
-      <section class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-        <p class="text-sm text-slate-500">View: Cart</p>
-        <h1 class="mt-2 text-3xl font-semibold text-slate-900">Owner handoff stub</h1>
+      <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="text-sm text-slate-500">View: Cart</p>
+            <h1 class="mt-2 text-3xl font-semibold text-slate-900">Shopping Cart</h1>
+            <p class="mt-2 text-sm text-slate-600">Review your items before completing purchase.</p>
+          </div>
+          <a href="catalog.html" class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50">Continue shopping</a>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+          <section aria-label="Cart items" class="overflow-hidden rounded-xl border border-slate-200">
+            <div class="hidden grid-cols-[minmax(0,1.3fr)_0.7fr_0.7fr_0.7fr] gap-3 border-b border-slate-200 bg-slate-50 px-5 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:grid">
+              <p>Product</p>
+              <p>Unit price</p>
+              <p>Quantity</p>
+              <p>Total</p>
+            </div>
+
+            <ul id="cart-items" class="divide-y divide-slate-200" aria-live="polite"></ul>
+          </section>
+
+          <aside aria-label="Order summary" class="h-fit rounded-xl border border-slate-200 bg-slate-50 p-5 lg:sticky lg:top-6">
+            <h2 class="text-lg font-semibold text-slate-900">Order Summary</h2>
+            <dl class="mt-4 space-y-3 text-sm">
+              <div class="flex items-center justify-between">
+                <dt class="text-slate-600">Subtotal</dt>
+                <dd id="subtotal" class="font-medium text-slate-900">$0.00</dd>
+              </div>
+              <div class="flex items-center justify-between">
+                <dt class="text-slate-600">Tax (10%)</dt>
+                <dd id="tax" class="font-medium text-slate-900">$0.00</dd>
+              </div>
+              <div class="border-t border-slate-200 pt-3"></div>
+              <div class="flex items-center justify-between">
+                <dt class="text-base font-semibold text-slate-900">Total</dt>
+                <dd id="total" class="text-base font-semibold text-slate-900">$0.00</dd>
+              </div>
+            </dl>
+
+            <a href="checkout.html" class="mt-6 block w-full rounded-lg bg-navbase px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-sleeve focus:ring-offset-2">
+              Purchase
+            </a>
+          </aside>
+        </div>
       </section>
     </main>
+
+    <template id="cart-item-template">
+      <li class="grid gap-4 px-4 py-5 sm:grid-cols-[minmax(0,1.3fr)_0.7fr_0.7fr_0.7fr] sm:items-center sm:px-5">
+        <div class="flex min-w-0 gap-3">
+          <img class="h-16 w-16 rounded-md border border-slate-200 object-cover" src="" alt="" />
+          <div class="min-w-0">
+            <p class="truncate text-sm font-semibold text-slate-900"></p>
+            <p class="mt-0.5 text-xs text-slate-500"></p>
+          </div>
+        </div>
+        <p class="text-sm text-slate-700 sm:text-right"><span class="sm:hidden text-slate-500">Unit price: </span><span class="item-unit"></span></p>
+        <label class="flex items-center gap-2 text-sm sm:justify-end">
+          <span class="sm:hidden text-slate-500">Quantity:</span>
+          <input type="number" min="1" class="item-qty w-20 rounded-md border border-slate-300 px-2 py-1.5 text-right text-sm focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-200" />
+        </label>
+        <p class="text-sm font-semibold text-slate-900 sm:text-right"><span class="sm:hidden text-slate-500">Total: </span><span class="item-total"></span></p>
+      </li>
+    </template>
+
+    <script>
+      const TAX_RATE = 0.1;
+      const cartItems = [
+        {
+          id: 1,
+          name: "Textured Linen Overshirt",
+          ref: "REF-LN-2104",
+          image: "https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=120&q=80",
+          unitPrice: 79.0,
+          quantity: 2
+        },
+        {
+          id: 2,
+          name: "Tailored Midnight Blazer with Contrast Stitching",
+          ref: "REF-BZ-3022",
+          image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=120&q=80",
+          unitPrice: 149.0,
+          quantity: 1
+        },
+        {
+          id: 3,
+          name: "Relaxed Cotton Trousers",
+          ref: "REF-TR-1880",
+          image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=120&q=80",
+          unitPrice: 62.5,
+          quantity: 3
+        }
+      ];
+
+      const currency = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD"
+      });
+
+      const itemsContainer = document.getElementById("cart-items");
+      const itemTemplate = document.getElementById("cart-item-template");
+      const subtotalEl = document.getElementById("subtotal");
+      const taxEl = document.getElementById("tax");
+      const totalEl = document.getElementById("total");
+
+      function updateSummary() {
+        const subtotal = cartItems.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
+        const tax = subtotal * TAX_RATE;
+        const total = subtotal + tax;
+
+        subtotalEl.textContent = currency.format(subtotal);
+        taxEl.textContent = currency.format(tax);
+        totalEl.textContent = currency.format(total);
+      }
+
+      function renderItems() {
+        itemsContainer.innerHTML = "";
+
+        cartItems.forEach((item) => {
+          const clone = itemTemplate.content.cloneNode(true);
+          const itemImage = clone.querySelector("img");
+          const [nameEl, refEl] = clone.querySelectorAll("p");
+          const unitEl = clone.querySelector(".item-unit");
+          const qtyEl = clone.querySelector(".item-qty");
+          const totalElLocal = clone.querySelector(".item-total");
+
+          itemImage.src = item.image;
+          itemImage.alt = item.name;
+          nameEl.textContent = item.name;
+          refEl.textContent = item.ref;
+          unitEl.textContent = currency.format(item.unitPrice);
+          qtyEl.value = item.quantity;
+          totalElLocal.textContent = currency.format(item.unitPrice * item.quantity);
+
+          qtyEl.addEventListener("change", (event) => {
+            const nextQty = Math.max(1, Number(event.target.value) || 1);
+            event.target.value = nextQty;
+            item.quantity = nextQty;
+            totalElLocal.textContent = currency.format(item.unitPrice * item.quantity);
+            updateSummary();
+          });
+
+          itemsContainer.appendChild(clone);
+        });
+
+        updateSummary();
+      }
+
+      renderItems();
+    </script>
   </body>
 </html>

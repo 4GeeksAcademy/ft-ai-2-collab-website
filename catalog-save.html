@@ -49,23 +49,6 @@
             </form>
 
             <div class="flex items-center gap-2 self-end lg:self-auto">
-              <button
-                id="bag-button"
-                type="button"
-                aria-label="Open bag"
-                class="relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-500/70 bg-slate-800/70 text-slate-100 transition hover:border-sleeve hover:text-white"
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4.5 w-4.5">
-                  <path d="M5 8h14l-1 12H6L5 8Z" />
-                  <path d="M9 9V7a3 3 0 1 1 6 0v2" />
-                </svg>
-                <span
-                  id="cart-count"
-                  class="absolute -right-1 -top-1 hidden min-w-[1.1rem] rounded-full bg-rose-500 px-1.5 py-0.5 text-center text-[10px] font-semibold leading-none text-white"
-                >
-                  0
-                </span>
-              </button>
               <button class="rounded-lg border border-slate-500/70 bg-slate-800/70 px-3 py-2 text-sm font-medium text-slate-100 transition hover:border-sleeve hover:text-white">
                 Account
               </button>
@@ -271,10 +254,10 @@
 
           <article data-category="shoes" data-size="44" class="product-card rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
             <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Shoes</p>
-            <h3 class="mt-2 text-base font-semibold text-slate-900">Château Croc Loafer</h3>
-            <p class="mt-1 text-sm text-slate-600">Classic slip-on, croc-embossed cow leather.</p>
+            <h3 class="mt-2 text-base font-semibold text-slate-900">Vendome Cap-Toe Oxford</h3>
+            <p class="mt-1 text-sm text-slate-600">Unisex cap-toe oxford with textured welt edge.</p>
             <div class="mt-4 flex items-center justify-between text-sm">
-              <span class="font-medium text-slate-800">$290</span>
+              <span class="font-medium text-slate-800">$154</span>
               <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">44</span>
             </div>
           </article>
@@ -348,191 +331,6 @@
       const sizeFilter = document.getElementById("size-filter");
       const products = Array.from(document.querySelectorAll(".product-card"));
       const emptyState = document.getElementById("empty-state");
-      const cartCount = document.getElementById("cart-count");
-
-      const previewImages = [
-        "https://cdn.shopify.com/s/files/1/0030/5535/3925/files/02_Cotton_Oxford_Sky_Model_Front.jpg?v=1727254891&width=600",
-        "https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw53e5a6a8/hi-res/CSR2111SKY_MODEL_UNTUCKED.jpg?sw=960&sh=1200",
-        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS7R88S3jSqic4xMzoG3VTLk7kzsSbP4K3gAw_DRL-Hp9uyZeZ9MAYJ2gPE0gAk3pRrJsSmsNj9KBdmIqZsHaX4wnKCOJWsuSkJjxor-X4N_0wuJozqMJtl",
-        "https://cottonfolk.in/cdn/shop/files/Men_s_sandstone_linen_collarless_shirt.jpg?v=1748416396&width=2048",
-        "https://media.neimanmarcus.com/f_auto,q_auto:low,ar_4:5,c_fill,dpr_2.0,w_1200/01/nm_4932932_100380_c",
-        "https://i.etsystatic.com/16031254/r/il/6e9df7/7202008883/il_570xN.7202008883_i82i.jpg",
-        "https://i.etsystatic.com/5543772/r/il/546c79/6684539908/il_570xN.6684539908_sem2.jpg",
-        "https://www.linennaive.com/cdn/shop/products/IMG_0070_5.jpg?v=1672731870&width=1080",
-        "https://img.lilysilk.com/cdn-cgi/image/width=1800,height=2700,quality=80,fit=cover/media/catalog/product/N10046/008BR/1.jpg",
-        "https://us.boden.com/cdn/shop/files/25wspr_t2000_ivo_m01_v2_c133d361-d2aa-4751-ba3e-336f73c99448.jpg?v=1767618348&width=823",
-        "https://dk.velasca.com/cdn/shop/files/01_daziee_tdm_77e6f7e9-eceb-49dc-a2e4-f51c6fa558f3.jpg?v=1756799554&width=1200",
-        "https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/N16681s2.jpg?im=Resize,width=750",
-        "https://www.bymayberry.com/cdn/shop/files/Sf36e8b5d3cc047fc9559c812b12b1403A.webp?v=1774357195&width=1080",
-        "https://media.thereformation.com/image/upload/f_auto,q_auto:eco,dpr_2.0/w_500/PRD-SFCC/1319512/ALMOND_LEATHER/1319512.1.ALMOND_LEATHER",
-        "https://media.thereformation.com/image/upload/f_auto,q_auto:eco,dpr_2.0/PRD-SFCC/1317295/BLACK_CROC/1317295.1.BLACK_CROC",
-        "https://cdn11.bigcommerce.com/s-uzpvek/images/stencil/500x659/products/3210/31092/9017-DOLL-CUOIO-2-1536x1536__34502.1758983322.jpg?c=2",
-        "https://api.ecom.longines.com/media/catalog/product/l/o/longines-master-collection-chrono-moonphase-l2-673-4-61-2-detailed-view-1600x2000-4-5628f4.jpg?&w=1920",
-        "https://scottsberry.centracdn.net/client/dynamic/images/6386_92174a67e1-ve100-15-3-full.jpg",
-        "https://i.etsystatic.com/55942297/r/il/a8dbfd/6980647385/il_1588xN.6980647385_1jxn.jpg",
-        "https://cdn11.bigcommerce.com/s-j3t79x/images/stencil/700x900/products/544/2126/JHClead__16640__87382.1517404122.jpg?c=2"
-      ];
-
-      const previewOverlay = document.createElement("div");
-      previewOverlay.className = "fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/55 p-4 sm:p-8";
-      previewOverlay.setAttribute("role", "dialog");
-      previewOverlay.setAttribute("aria-modal", "true");
-
-      const previewWindow = document.createElement("div");
-      previewWindow.className = "relative w-full max-w-4xl rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl sm:p-7";
-
-      const closePreviewButton = document.createElement("button");
-      closePreviewButton.type = "button";
-      closePreviewButton.className = "absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-lg font-semibold leading-none text-slate-700 transition hover:bg-slate-100";
-      closePreviewButton.setAttribute("aria-label", "Close preview");
-      closePreviewButton.textContent = "x";
-
-      const previewImage = document.createElement("img");
-      previewImage.className = "h-[58vh] w-full rounded-xl bg-slate-100 p-3 object-contain";
-      previewImage.alt = "Product preview";
-
-      const previewDetails = document.createElement("div");
-      previewDetails.className = "mt-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3";
-
-      const previewTitle = document.createElement("p");
-      previewTitle.className = "text-lg font-semibold text-slate-900";
-
-      const previewDescription = document.createElement("p");
-      previewDescription.className = "mt-1 text-sm text-slate-600";
-
-      const previewPrice = document.createElement("p");
-      previewPrice.className = "mt-3 text-base font-semibold text-slate-900";
-
-      previewDetails.appendChild(previewTitle);
-      previewDetails.appendChild(previewDescription);
-      previewDetails.appendChild(previewPrice);
-
-      const previewActions = document.createElement("div");
-      previewActions.className = "mt-5 flex justify-center";
-
-      let currentPreviewProduct = null;
-      const bagItems = [];
-
-      function updateCartCount() {
-        const totalItems = bagItems.length;
-        cartCount.textContent = String(totalItems);
-        cartCount.classList.toggle("hidden", totalItems === 0);
-      }
-
-      const addToBagButton = document.createElement("button");
-      addToBagButton.type = "button";
-      addToBagButton.className = "rounded-lg bg-slate-900 px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-slate-700";
-      addToBagButton.textContent = "Add to bag";
-
-      previewActions.appendChild(addToBagButton);
-      previewWindow.appendChild(closePreviewButton);
-      previewWindow.appendChild(previewImage);
-      previewWindow.appendChild(previewDetails);
-      previewWindow.appendChild(previewActions);
-      previewOverlay.appendChild(previewWindow);
-      document.body.appendChild(previewOverlay);
-
-      function openPreviewWindow(imageUrl, imageAlt, productDescription, productPrice) {
-        previewImage.src = imageUrl;
-        previewImage.alt = imageAlt;
-        previewTitle.textContent = imageAlt;
-        previewDescription.textContent = productDescription;
-        previewPrice.textContent = productPrice;
-        currentPreviewProduct = {
-          name: imageAlt,
-          description: productDescription,
-          price: productPrice,
-          image: imageUrl
-        };
-        previewOverlay.classList.remove("hidden");
-        previewOverlay.classList.add("flex");
-      }
-
-      function closePreviewWindow() {
-        previewOverlay.classList.add("hidden");
-        previewOverlay.classList.remove("flex");
-        currentPreviewProduct = null;
-      }
-
-      closePreviewButton.addEventListener("click", closePreviewWindow);
-      addToBagButton.addEventListener("click", () => {
-        if (currentPreviewProduct) {
-          bagItems.push(currentPreviewProduct);
-          updateCartCount();
-        }
-        closePreviewWindow();
-      });
-      previewOverlay.addEventListener("click", (event) => {
-        if (event.target === previewOverlay) {
-          closePreviewWindow();
-        }
-      });
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && !previewOverlay.classList.contains("hidden")) {
-          closePreviewWindow();
-        }
-      });
-
-      products.forEach((product, index) => {
-        const content = document.createElement("div");
-        content.className = "relative z-10 flex h-full flex-col opacity-0 transition duration-300 ease-out";
-
-        while (product.firstChild) {
-          content.appendChild(product.firstChild);
-        }
-
-        const metadataRow = content.lastElementChild;
-        if (metadataRow && metadataRow.tagName === "DIV") {
-          metadataRow.classList.remove("mt-4");
-          metadataRow.classList.add("mt-auto", "pt-4");
-        }
-
-        const preview = document.createElement("div");
-        preview.className =
-          "pointer-events-none absolute inset-3 z-0 rounded-lg border border-white/60 bg-cover bg-center opacity-100 shadow-inner transition duration-300 ease-out";
-        preview.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.2)), url('${previewImages[index]}')`;
-
-        const showPreview = () => {
-          preview.classList.remove("opacity-100");
-          preview.classList.add("opacity-25");
-          content.classList.remove("opacity-0");
-          content.classList.add("opacity-100");
-          product.classList.add("ring-2", "ring-slate-300");
-        };
-
-        const hidePreview = () => {
-          preview.classList.remove("opacity-25");
-          preview.classList.add("opacity-100");
-          content.classList.remove("opacity-100");
-          content.classList.add("opacity-0");
-          product.classList.remove("ring-2", "ring-slate-300");
-        };
-
-        product.classList.add("relative", "h-full", "overflow-hidden", "cursor-pointer");
-        product.setAttribute("tabindex", "0");
-        product.appendChild(preview);
-        product.appendChild(content);
-
-        product.addEventListener("mouseenter", showPreview);
-        product.addEventListener("mouseleave", hidePreview);
-        product.addEventListener("focus", showPreview);
-        product.addEventListener("blur", hidePreview);
-        product.addEventListener("click", () => {
-          const productTitle = product.querySelector("h3")?.textContent || "Product preview";
-          const productDescription = product.querySelector("h3 + p")?.textContent || "";
-          const productPrice = product.querySelector("div span")?.textContent || "";
-          openPreviewWindow(previewImages[index], productTitle, productDescription, productPrice);
-        });
-        product.addEventListener("keydown", (event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            const productTitle = product.querySelector("h3")?.textContent || "Product preview";
-            const productDescription = product.querySelector("h3 + p")?.textContent || "";
-            const productPrice = product.querySelector("div span")?.textContent || "";
-            openPreviewWindow(previewImages[index], productTitle, productDescription, productPrice);
-          }
-        });
-      });
 
       function applyFilters() {
         const activeCategory = categoryFilter.value;
