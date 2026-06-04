@@ -25,13 +25,6 @@ def serve_dir_directory_index():
     else:
         return "<h1 align='center'>404</h1><h2 align='center'>Missing index.html file</h2><p align='center'><img src='https://github.com/4GeeksAcademy/html-hello/blob/main/.vscode/rigo-baby.jpeg?raw=true' /></p>"
 
-@app.route('/preview-cart', methods=['GET'])
-@app.route('/cart', methods=['GET'])
-def serve_cart_preview():
-    if os.path.exists("cart.html"):
-        return send_from_directory(static_file_dir, 'cart.html')
-    return "<h1 align='center'>404</h1><h2 align='center'>Missing cart.html file</h2>"
-
 # Serving any other image
 @app.route('/<path:path>', methods=['GET'])
 def serve_any_other_file(path):
