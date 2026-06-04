@@ -23,6 +23,13 @@
       };
     </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Spectral:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="flex min-h-screen flex-col bg-slate-100 text-slate-900 antialiased">
@@ -30,7 +37,7 @@
       <div class="nav-sleeve mx-auto max-w-6xl">
         <nav aria-label="Global" class="relative overflow-hidden rounded-xl bg-navbase px-4 py-3 text-navtext sm:px-6">
           <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-            <a href="#" class="inline-flex items-baseline gap-2">
+            <a href="index.html" class="inline-flex items-baseline gap-2">
               <span class="text-xs uppercase tracking-[0.28em] text-slate-300">Maison</span>
               <span class="text-lg font-semibold tracking-tight text-navtext">Atelier Rue</span>
             </a>
@@ -52,9 +59,9 @@
               <button class="rounded-lg border border-slate-500/70 bg-slate-800/70 px-3 py-2 text-sm font-medium text-slate-100 transition hover:border-sleeve hover:text-white">
                 Account
               </button>
-              <button
+              <a
                 id="bag-button"
-                type="button"
+                href="cart.html"
                 aria-label="Open bag"
                 class="relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-500/70 bg-slate-800/70 text-slate-100 transition hover:border-sleeve hover:text-white"
               >
@@ -68,7 +75,7 @@
                 >
                   0
                 </span>
-              </button>
+              </a>
             </div>
           </div>
         </nav>
