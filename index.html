@@ -137,6 +137,38 @@
 			{ name: "USB-C Digital AV Adapter", category: "Accessories", price: "$69", generation: ["Current", "Adapter"] }
 			];
 
+			const categoryImages = {
+				iPhone: "https://images.unsplash.com/photo-1592286646432-3b0a4f9f4f4a?auto=format&fit=crop&w=1200&q=80",
+				Mac: "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
+				iPad: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=1200&q=80",
+				Watch: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=1200&q=80",
+				Audio: "https://images.unsplash.com/photo-1606400082777-ef05f3c5cde2?auto=format&fit=crop&w=1200&q=80",
+				"TV & Home": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80",
+				Accessories: "https://images.unsplash.com/photo-1625723044792-44de16ccb4e9?auto=format&fit=crop&w=1200&q=80"
+			};
+
+			const productImages = {
+				"iPhone 16 Pro": "https://www.wireless.walmart.ca/wp-content/uploads/2024/09/iPhone-16-Pro.jpg",
+				"iPhone 16": "http://shop.mobileklinik.ca/cdn/shop/files/AppleiPhone16ProMaxtitanium.png?v=1767881262",
+				"MacBook Pro 14-inch": "https://photographylife.com/wp-content/uploads/2022/06/Apple_MacBook-Pro_14-16-inch_10182021-1.jpg",
+				"MacBook Air 13-inch": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-silver-select-202503?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1741885366625",
+				"iMac 24-inch": "https://webobjects2.cdw.com/is/image/CDW/8137228?wid=784&hei=477&resMode=bilin&fit=fit,1",
+				"iPad Pro": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111979_ipad-pro-12-2018.png",
+				"iPad mini": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-mini-finish-select-gallery-202410-purple-wifi_AV1_FMT_WHH?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=eDJDc00wczl1QWk5QmpVYitFNXQwN0Y2ME45L1lWWDhkYWVYaTNEZnBvRGIxemtSR2ZlN0Q2dGRSdEhqcFlia1dOQTNDM3hVRmI5ME1XSURJdUNJTU9OTHlWMldRSVkrK2JXakh2ZVlwWUM4VzdPRjFweXV0dDJSWTFJd1Q3Y0NxUFk0SlBWbUc4bm1DcGNtR2l4Y0h2R1BiWkdONWxmUjlTekdkU0JaZFRv&traceId=1",
+				"Apple Watch Series 10": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121202-apple-watch-series-10.png",
+				"Apple Watch Ultra 2": "https://m.media-amazon.com/images/I/71-xIGZiLVL.jpg",
+				"Apple Watch SE": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111853_apple-watch-se-2nd-gen.png",
+				"AirPods Pro 2": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111851_sp880-airpods-Pro-2nd-gen.png",
+				"AirPods 4": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-4-anc-select-202409_FMT_WHH?wid=752&hei=636&fmt=jpeg&qlt=90&.v=1725502639798",
+				"AirPods Max": "https://webobjects2.cdw.com/is/image/CDW/8084521?wid=784&hei=477&resMode=bilin&fit=fit,1",
+				"HomePod mini": "https://www.apple.com/newsroom/images/2024/07/apple-introduces-homepod-mini-in-midnight/tile/Apple-HomePod-mini-midnight-lp.jpg.news_app_ed.jpg",
+				"Apple TV 4K": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/apple-tv-4k-hero-select-202210_FMT_WHH?wid=640&hei=600&fmt=jpeg&qlt=90&.v=a3VoZW85YUhreXN3ZFlSUDc3a0tqdlRjVUpERFZzUktXVTBUUFNkS25kMUdkaGRGdVBIV1JWUy9iQmVpZSt1K2xVWFZoelI3dzVQNk1XQ0tEU3JnellQN1hidmdzWnFFZndUalVKdDdBVkdjMGJLNU85a0UyUEVZc05QV01JZ08",
+				"Studio Display": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/studio-display-og-202603?wid=1200&hei=630&fmt=jpeg&qlt=90&.v=1770765709335",
+				"Magic Keyboard": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXCL3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=S1pkeVJDY2FBQ0dESk1WYXJ4V1Yxd2tuVHYzMERCZURia3c5SzJFOTlPam52L09kbzNiSStKOHg1RWFmMk9ZeHNPTTVzYTczc3ZWbTJwM0wxQ1JUSEE",
+				"Magic Trackpad": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXK93?wid=4000&hei=4000&fmt=jpeg&qlt=90&.v=1730508284008",
+				"USB-C Digital AV Adapter": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MUF82?wid=1144&hei=1144&fmt=jpeg&qlt=95&.v=1590526633000"
+			};
+
 			const categoryFilter = root.querySelector("#apCategoryFilter");
 			const generationFilter = root.querySelector("#apGenerationFilter");
 			const productGrid = root.querySelector("#apProductGrid");
@@ -182,6 +214,9 @@
 					card.className = "group rounded-3xl border border-borderSoft/80 bg-gradient-to-b from-white to-bgSoft p-5 shadow-[0_6px_18px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_14px_28px_rgba(15,23,42,0.10)]";
 
 					card.innerHTML = `
+						<div class="overflow-hidden rounded-2xl border border-borderSoft/70 bg-white">
+							<img src="${productImages[product.name] || categoryImages[product.category] || categoryImages.Accessories}" alt="${product.name}" loading="lazy" class="h-36 w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
+						</div>
 						<p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-textSecondary">${product.category}</p>
 						<h2 class="mt-2 text-[17px] font-semibold leading-snug tracking-tight text-textPrimary">${product.name}</h2>
 						<p class="mt-3 text-sm font-semibold text-brand">${product.price}</p>
