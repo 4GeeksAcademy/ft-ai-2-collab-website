@@ -57,35 +57,37 @@
       FREE SHIPPING IN FRANCE OVER 120 EUR | Complimentary tailoring on selected blazers
     </p>
 
-    <header class="px-4 pb-4 pt-5 sm:px-8 sm:pt-8">
+    <header class="px-4 pb-3 pt-5 sm:px-8 sm:pt-8">
       <div class="nav-sleeve mx-auto max-w-6xl">
-        <nav
-          aria-label="Global"
-          class="relative overflow-hidden rounded-soft border border-stone/80 bg-navbase/90 px-4 py-3 text-navtext shadow-hush backdrop-blur sm:px-6"
-        >
-          <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <a href="home.html" class="inline-flex items-baseline gap-2">
-              <span class="text-[0.65rem] uppercase tracking-[0.3em] text-ink/55">House</span>
-              <span class="font-display text-2xl leading-none text-ink">Atelier Row</span>
+        <nav aria-label="Global" class="relative overflow-hidden rounded-xl bg-navbase px-4 py-3 text-navtext sm:px-6">
+          <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <a href="#" class="inline-flex items-baseline gap-2">
+              <span class="text-xs uppercase tracking-[0.28em] text-slate-300">House</span>
+              <span class="text-lg font-semibold tracking-tight text-navtext">Atelier Row</span>
             </a>
 
-            <ul class="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-ink/80" aria-label="Main links">
-              <li><a class="transition hover:text-ink" href="home.html">Home</a></li>
-              <li><a class="transition hover:text-ink" href="catalog.html">Catalog</a></li>
-              <li><a class="transition hover:text-ink" href="product.html">Product</a></li>
-              <li><a class="transition hover:text-ink" href="cart.html">Cart</a></li>
-              <li><a class="font-semibold text-ink" href="checkout.html" aria-current="page">Checkout</a></li>
-            </ul>
+            <form class="w-full lg:max-w-xl" role="search" aria-label="Search products">
+              <label for="site-search" class="sr-only">Search</label>
+              <div class="relative">
+                <input
+                  id="site-search"
+                  name="q"
+                  type="search"
+                  placeholder="Search shirts, blazers, trousers"
+                  class="w-full rounded-lg border border-slate-500/60 bg-slate-900/30 px-4 py-2.5 text-sm text-slate-100 placeholder:text-slate-300/70 focus:border-sleeve focus:outline-none focus:ring-2 focus:ring-sleeve/40"
+                />
+              </div>
+            </form>
 
-            <div class="flex items-center gap-2 self-start lg:self-auto">
-              <button class="rounded-full border border-ink/20 bg-white/80 px-4 py-2 text-sm font-medium text-ink transition hover:border-ink/40">
+            <div class="flex items-center gap-2 self-end lg:self-auto">
+              <button class="rounded-lg border border-slate-500/70 bg-slate-800/70 px-3 py-2 text-sm font-medium text-slate-100 transition hover:border-sleeve hover:text-white">
                 Account
               </button>
               <button
                 aria-label="Open account menu"
-                class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-ink/20 bg-white/80 text-sm font-semibold text-ink transition hover:border-ink/40"
+                class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-500/70 bg-slate-800/70 text-sm font-semibold text-slate-100 transition hover:border-sleeve hover:text-white"
               >
-                EN
+                AR
               </button>
             </div>
           </div>
@@ -237,6 +239,9 @@
               <li class="flex items-center justify-between border-b border-stone/80 pb-3"><span>Wool Blazer Nacre</span><span>220 EUR</span></li>
               <li class="flex items-center justify-between border-b border-stone/80 pb-3"><span>Pleated Trousers Ardoise</span><span>138 EUR</span></li>
               <li class="flex items-center justify-between"><span>Silk Tie Sauge</span><span>80 EUR</span></li>
+              <li class="mt-2 flex items-center justify-between border-t border-stone/80 pt-3 text-xs uppercase tracking-[0.12em] text-ink/70">
+                <span>Order Total</span><span>438 EUR</span>
+              </li>
             </ul>
           </section>
 
