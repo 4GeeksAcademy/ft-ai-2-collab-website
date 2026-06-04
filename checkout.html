@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout | Atelier Row</title>
+    <title>Checkout | Maison Atelier Rue</title>
     <meta
       name="description"
-      content="Complete your Atelier Row order: personal details, shipping address, and secure card payment in three elegant steps."
+      content="Complete your Maison Atelier Rue order: personal details, shipping address, and secure card payment in three elegant steps."
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -62,8 +62,8 @@
         <nav aria-label="Global" class="relative overflow-hidden rounded-xl bg-navbase px-4 py-3 text-navtext sm:px-6">
           <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <a href="#" class="inline-flex items-baseline gap-2">
-              <span class="text-xs uppercase tracking-[0.28em] text-slate-300">House</span>
-              <span class="text-lg font-semibold tracking-tight text-navtext">Atelier Row</span>
+              <span class="text-xs uppercase tracking-[0.28em] text-slate-300">Maison</span>
+              <span class="text-lg font-semibold tracking-tight text-navtext">Atelier Rue</span>
             </a>
 
             <form class="w-full lg:max-w-xl" role="search" aria-label="Search products">
@@ -84,10 +84,14 @@
                 Account
               </button>
               <button
-                aria-label="Open account menu"
-                class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-500/70 bg-slate-800/70 text-sm font-semibold text-slate-100 transition hover:border-sleeve hover:text-white"
+                type="button"
+                aria-label="Open bag"
+                class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-500/70 bg-slate-800/70 text-slate-100 transition hover:border-sleeve hover:text-white"
               >
-                AR
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4.5 w-4.5">
+                  <path d="M5 8h14l-1 12H6L5 8Z" />
+                  <path d="M9 9V7a3 3 0 1 1 6 0v2" />
+                </svg>
               </button>
             </div>
           </div>
@@ -118,7 +122,7 @@
 
       <section id="checkout-flow" class="mt-8 grid gap-7 lg:grid-cols-[1.35fr_0.65fr]">
         <form class="stagger-wrap rounded-soft border border-stone/90 bg-white/90 p-5 shadow-hush md:p-8" aria-label="Three step checkout form">
-          <div class="stagger-item editorial-divider pb-8" id="step-personal">
+          <div class="stagger-item checkout-step pb-8" id="step-personal">
             <div class="mb-5 flex items-center gap-3">
               <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-sleeve/70 bg-mist/40 text-sm font-semibold">1</span>
               <div>
@@ -149,7 +153,7 @@
             </div>
           </div>
 
-          <div class="stagger-item editorial-divider py-8" id="step-shipping">
+          <div class="stagger-item checkout-step py-8" id="step-shipping">
             <div class="mb-5 flex items-center gap-3">
               <span class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-sky/70 bg-sky/30 text-sm font-semibold">2</span>
               <div>
@@ -336,114 +340,7 @@
           </ul>
         </section>
       </div>
-      <p class="mt-8 text-xs uppercase tracking-[0.18em] text-ink/55">© 2026 Atelier Row. All Rights Reserved.</p>
+      <p class="mt-8 text-xs uppercase tracking-[0.18em] text-ink/55">© 2026 Maison Atelier Rue. All Rights Reserved.</p>
     </footer>
-
-    <script>
-      (function syncCheckoutThemeFromHome() {
-        const root = document.documentElement;
-        const body = document.body;
-
-        function hexToRgb(hex) {
-          if (!hex) {
-            return null;
-          }
-          const raw = hex.trim().replace("#", "");
-          if (![3, 6].includes(raw.length)) {
-            return null;
-          }
-          const normalized = raw.length === 3 ? raw.split("").map((c) => c + c).join("") : raw;
-          const value = Number.parseInt(normalized, 16);
-          if (Number.isNaN(value)) {
-            return null;
-          }
-          return {
-            r: (value >> 16) & 255,
-            g: (value >> 8) & 255,
-            b: value & 255
-          };
-        }
-
-        function parseColorToken(scriptText, key) {
-          const re = new RegExp(key + "\\s*:\\s*[\"']([^\"']+)[\"']");
-          const match = scriptText.match(re);
-          return match ? match[1] : "";
-        }
-
-        function writeRgbVar(name, color) {
-          const rgb = hexToRgb(color);
-          if (!rgb) {
-            return;
-          }
-          root.style.setProperty(name, rgb.r + " " + rgb.g + " " + rgb.b);
-        }
-
-        function mixRgb(a, b, ratio) {
-          return {
-            r: Math.round(a.r + (b.r - a.r) * ratio),
-            g: Math.round(a.g + (b.g - a.g) * ratio),
-            b: Math.round(a.b + (b.b - a.b) * ratio)
-          };
-        }
-
-        function setDerivedVars(navbase, navtext, sleeve) {
-          const nb = hexToRgb(navbase);
-          const nt = hexToRgb(navtext);
-          const sl = hexToRgb(sleeve);
-          if (!nb || !nt || !sl) {
-            return;
-          }
-
-          const paper = mixRgb(nt, sl, 0.12);
-          const stone = mixRgb(nt, nb, 0.18);
-          const ink = mixRgb(nb, nt, 0.12);
-          const mist = mixRgb(sl, nt, 0.35);
-          const sky = mixRgb(sl, nb, 0.24);
-
-          root.style.setProperty("--paper-rgb", paper.r + " " + paper.g + " " + paper.b);
-          root.style.setProperty("--stone-rgb", stone.r + " " + stone.g + " " + stone.b);
-          root.style.setProperty("--ink-rgb", ink.r + " " + ink.g + " " + ink.b);
-          root.style.setProperty("--mist-rgb", mist.r + " " + mist.g + " " + mist.b);
-          root.style.setProperty("--sky-rgb", sky.r + " " + sky.g + " " + sky.b);
-        }
-
-        async function sync() {
-          try {
-            const response = await fetch("home.html", { cache: "no-store" });
-            if (!response.ok) {
-              return;
-            }
-
-            const html = await response.text();
-            const doc = new DOMParser().parseFromString(html, "text/html");
-            const scripts = Array.from(doc.querySelectorAll("script"))
-              .map((script) => script.textContent || "")
-              .join("\n");
-
-            const navbase = parseColorToken(scripts, "navbase");
-            const navtext = parseColorToken(scripts, "navtext");
-            const sleeve = parseColorToken(scripts, "sleeve");
-
-            if (navbase && navtext && sleeve) {
-              writeRgbVar("--navbase-rgb", navbase);
-              writeRgbVar("--navtext-rgb", navtext);
-              writeRgbVar("--sleeve-rgb", sleeve);
-              setDerivedVars(navbase, navtext, sleeve);
-            }
-
-            const homeBodyClass = (doc.body && doc.body.getAttribute("class")) || "";
-            if (homeBodyClass.trim()) {
-              const classes = homeBodyClass.split(/\s+/).filter(Boolean);
-              const checkoutClass = "checkout-page";
-              body.className = Array.from(new Set([checkoutClass].concat(classes))).join(" ");
-            }
-          } catch (error) {
-            console.warn("Theme sync skipped:", error);
-          }
-        }
-
-        sync();
-      })();
-    </script>
   </body>
 </html>
