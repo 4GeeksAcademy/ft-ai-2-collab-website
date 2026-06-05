@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Apple Store - Catalog</title>
+	<title>Aster | Catalog</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,23 +38,43 @@
 	<div id="ap-catalog-root" class="relative min-h-screen bg-[#F5F5F7] text-[#1C1C1E] antialiased">
 	<div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(0,113,227,0.12),transparent_34%),radial-gradient(circle_at_80%_100%,rgba(52,199,89,0.10),transparent_45%)]"></div>
 
-	<header class="sticky top-0 z-30 border-b border-[#E5E5EA] bg-white/85 shadow-sm backdrop-blur-xl">
-		<div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-3 sm:px-6 lg:px-8">
-			<div class="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#E5E5EA] bg-white px-3 py-3">
+	<header
+		class="sticky top-0 z-30 border-b border-[#E5E5EA] bg-white/85 shadow-sm backdrop-blur-xl"
+	>
+		<div
+			class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-3 sm:px-6 lg:px-8"
+		>
+			<div
+				class="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#E5E5EA] bg-white px-3 py-3"
+			>
 				<a
 					href="index.html"
 					class="inline-flex items-center gap-2 rounded-md px-2 py-1 text-lg font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
-					aria-label="NovaStore homepage"
+					aria-label="Aster homepage"
 				>
-					<span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#0071E3] text-sm font-bold text-white">N</span>
-					<span>NovaStore</span>
+					<span
+						class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#0071E3] text-sm font-bold text-white"
+						>A</span
+					>
+					<span>Aster</span>
 				</a>
 
-				<form class="order-3 w-full sm:order-2 sm:w-auto sm:flex-1 sm:max-w-xl" action="catalog.html" method="get">
+				<form
+					class="order-3 w-full sm:order-2 sm:w-auto sm:flex-1 sm:max-w-xl"
+					action="catalog.html"
+					method="get"
+				>
 					<label for="site-search" class="sr-only">Search products</label>
 					<div class="relative">
-						<svg aria-hidden="true" viewBox="0 0 24 24" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6E6E73]">
-							<path fill="currentColor" d="M10 3a7 7 0 1 0 4.47 12.39l4.57 4.57 1.41-1.41-4.57-4.57A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10a5 5 0 0 1 0-10Z" />
+						<svg
+							aria-hidden="true"
+							viewBox="0 0 24 24"
+							class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6E6E73]"
+						>
+							<path
+								fill="currentColor"
+								d="M10 3a7 7 0 1 0 4.47 12.39l4.57 4.57 1.41-1.41-4.57-4.57A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10a5 5 0 0 1 0-10Z"
+							/>
 						</svg>
 						<input
 							id="site-search"
@@ -77,31 +97,64 @@
 						href="cart.html"
 						class="inline-flex items-center gap-2 rounded-lg bg-[#0071E3] px-3 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
 					>
-						<span class="inline-block h-2 w-2 rounded-full bg-[#34C759]"></span>
+						<span
+							class="inline-block h-2 w-2 rounded-full bg-[#34C759]"
+						></span>
 						Cart
 					</a>
 				</div>
 			</div>
 
-			<nav aria-label="Primary" class="overflow-x-auto">
+			<nav aria-label="Primary" >
 				<ul class="flex min-w-max items-center gap-2 text-sm text-[#6E6E73]">
 					<li>
-						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="index.html">Home</a>
+						<a
+							class="rounded-md bg-[#E9F2FD] px-3 py-2 font-medium text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+							href="index.html"
+							>Home</a
+						>
 					</li>
 					<li>
-						<a class="rounded-md bg-[#E9F2FD] px-3 py-2 font-medium text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html">Catalog</a>
+						<a
+							class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+							href="catalog.html"
+							>Catalog</a
+						>
 					</li>
 					<li>
-						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=phones">Phones</a>
+						<a
+							class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+							href="checkout.html"
+							>Checkout</a
+						>
 					</li>
 					<li>
-						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=laptops">Laptops</a>
+						<a
+							class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+							href="catalog.html?category=phones"
+							>Phones</a
+						>
 					</li>
 					<li>
-						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=tablets">Tablets</a>
+						<a
+							class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+							href="catalog.html?category=laptops"
+							>Laptops</a
+						>
 					</li>
 					<li>
-						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=accessories">Accessories</a>
+						<a
+							class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+							href="catalog.html?category=tablets"
+							>Tablets</a
+						>
+					</li>
+					<li>
+						<a
+							class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+							href="catalog.html?category=accessories"
+							>Accessories</a
+						>
 					</li>
 				</ul>
 			</nav>
@@ -111,9 +164,9 @@
 	<main class="px-4 pb-14 pt-8 md:px-8 lg:px-14">
 		<section id="ap-catalog" class="mx-auto w-full max-w-7xl rounded-[2.25rem] border border-[#D1D1D6]/70 bg-white/90 p-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-10">
 			<div class="mx-auto max-w-3xl text-center">
-				<p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#0071E3]">Apple Product Lineup</p>
+				<p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#0071E3]">Aster Product Lineup</p>
 				<h1 class="mt-3 text-4xl font-semibold leading-tight tracking-tight text-slate-900 md:text-6xl">Catalog</h1>
-				<p class="mt-4 text-sm leading-relaxed text-[#6E6E73] md:text-base">Explore iPhone, Mac, iPad, Watch, and accessories. Filter by product family and generation to compare the latest Apple devices.</p>
+				<p class="mt-4 text-sm leading-relaxed text-[#6E6E73] md:text-base">Explore Nova phones, laptops, tablets, wearables, and accessories. Filter by product family and generation to compare the latest models.</p>
 			</div>
 
 			<div role="region" aria-label="Product filters" class="mx-auto mt-8 flex max-w-5xl flex-col gap-4 rounded-3xl border border-[#D1D1D6]/70 bg-white p-4 shadow-[0_8px_24px_rgba(15,23,42,0.05)] sm:flex-row sm:flex-wrap sm:items-end sm:p-5">
@@ -173,15 +226,15 @@
 			<section aria-labelledby="footer-contact">
 				<h2 id="footer-contact" class="text-lg font-semibold">Contact</h2>
 				<address class="mt-3 not-italic text-[#6E6E73]">
-					<p>NovaStore Support</p>
-					<p class="mt-2"><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="mailto:support@novastore.com">support@novastore.com</a></p>
+					<p>Aster Support</p>
+					<p class="mt-2"><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="mailto:support@aster.com">support@aster.com</a></p>
 					<p class="mt-2"><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="tel:+18005550140">+1 (800) 555-0140</a></p>
 					<p class="mt-2">Mon-Fri, 9:00 AM-6:00 PM</p>
 				</address>
 			</section>
 		</div>
 		<div class="border-t border-[#E5E5EA] px-4 py-4 text-center text-sm text-[#6E6E73] sm:px-6 lg:px-8">
-			© 2026 NovaStore. Built for educational prototype purposes.
+			© 2026 Aster. Built for educational prototype purposes.
 		</div>
 	</footer>
 	</div>
@@ -194,58 +247,58 @@
 			}
 
 			const products = [
-			{ name: "iPhone 16 Pro", category: "iPhone", price: "From $999", generation: ["Latest", "Pro"] },
-			{ name: "iPhone 16", category: "iPhone", price: "From $799", generation: ["Latest", "Standard"] },
-			{ name: "MacBook Pro 14-inch", category: "Mac", price: "From $1,999", generation: ["M4", "Pro"] },
-			{ name: "MacBook Air 13-inch", category: "Mac", price: "From $1,099", generation: ["M3", "Air"] },
-			{ name: "iMac 24-inch", category: "Mac", price: "From $1,299", generation: ["M3", "Desktop"] },
-			{ name: "iPad Pro", category: "iPad", price: "From $999", generation: ["M4", "Pro"] },
-			{ name: "iPad Air", category: "iPad", price: "From $599", generation: ["M2", "Air"] },
-			{ name: "iPad mini", category: "iPad", price: "From $499", generation: ["A17 Pro", "Mini"] },
-			{ name: "Apple Watch Series 10", category: "Watch", price: "From $399", generation: ["Latest", "Standard"] },
-			{ name: "Apple Watch Ultra 2", category: "Watch", price: "From $799", generation: ["Latest", "Ultra"] },
-			{ name: "Apple Watch SE", category: "Watch", price: "From $249", generation: ["Current", "SE"] },
-			{ name: "AirPods Pro 2", category: "Audio", price: "$249", generation: ["Current", "Pro"] },
-			{ name: "AirPods 4", category: "Audio", price: "$179", generation: ["Latest", "Standard"] },
-			{ name: "AirPods Max", category: "Audio", price: "$549", generation: ["Current", "Max"] },
-			{ name: "HomePod mini", category: "Audio", price: "$99", generation: ["Current", "Home"] },
-			{ name: "Apple TV 4K", category: "TV & Home", price: "$129", generation: ["Current", "4K"] },
-			{ name: "Studio Display", category: "Accessories", price: "From $1,599", generation: ["Current", "Display"] },
-			{ name: "Magic Keyboard", category: "Accessories", price: "$299", generation: ["Current", "Input"] },
-			{ name: "Magic Trackpad", category: "Accessories", price: "$129", generation: ["Current", "Input"] },
-			{ name: "USB-C Digital AV Adapter", category: "Accessories", price: "$69", generation: ["Current", "Adapter"] }
+			{ name: "Nova Phone X1 Pro", category: "Phones", price: "From $999", generation: ["Latest", "Pro"] },
+			{ name: "Nova Phone X1", category: "Phones", price: "From $799", generation: ["Latest", "Standard"] },
+			{ name: "NovaBook Pro 14", category: "Laptops", price: "From $1,999", generation: ["M4", "Pro"] },
+			{ name: "NovaBook Air 14", category: "Laptops", price: "From $1,099", generation: ["M3", "Air"] },
+			{ name: "NovaDesk One 24", category: "Laptops", price: "From $1,299", generation: ["M3", "Desktop"] },
+			{ name: "Nova Tab Pro", category: "Tablets", price: "From $999", generation: ["M4", "Pro"] },
+			{ name: "Nova Tab Air", category: "Tablets", price: "From $599", generation: ["M2", "Air"] },
+			{ name: "Nova Tab Mini", category: "Tablets", price: "From $499", generation: ["A17 Pro", "Mini"] },
+			{ name: "Nova Watch S10", category: "Wearables", price: "From $399", generation: ["Latest", "Standard"] },
+			{ name: "Nova Watch Ultra 2", category: "Wearables", price: "From $799", generation: ["Latest", "Ultra"] },
+			{ name: "Nova Watch SE", category: "Wearables", price: "From $249", generation: ["Current", "SE"] },
+			{ name: "Nova Buds Pro 2", category: "Audio", price: "$249", generation: ["Current", "Pro"] },
+			{ name: "Nova Buds 4", category: "Audio", price: "$179", generation: ["Latest", "Standard"] },
+			{ name: "Nova Buds Max", category: "Audio", price: "$549", generation: ["Current", "Max"] },
+			{ name: "Nova Pod Mini", category: "Audio", price: "$99", generation: ["Current", "Home"] },
+			{ name: "Nova TV Hub 4K", category: "Home", price: "$129", generation: ["Current", "4K"] },
+			{ name: "Nova Studio Display", category: "Accessories", price: "From $1,599", generation: ["Current", "Display"] },
+			{ name: "Nova Keyboard", category: "Accessories", price: "$299", generation: ["Current", "Input"] },
+			{ name: "Nova Trackpad", category: "Accessories", price: "$129", generation: ["Current", "Input"] },
+			{ name: "Nova USB-C AV Adapter", category: "Accessories", price: "$69", generation: ["Current", "Adapter"] }
 			];
 
 			const categoryImages = {
-				iPhone: "https://images.unsplash.com/photo-1592286646432-3b0a4f9f4f4a?auto=format&fit=crop&w=1200&q=80",
-				Mac: "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
-				iPad: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=1200&q=80",
-				Watch: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=1200&q=80",
+				Phones: "https://images.unsplash.com/photo-1592286646432-3b0a4f9f4f4a?auto=format&fit=crop&w=1200&q=80",
+				Laptops: "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
+				Tablets: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=1200&q=80",
+				Wearables: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=1200&q=80",
 				Audio: "https://images.unsplash.com/photo-1606400082777-ef05f3c5cde2?auto=format&fit=crop&w=1200&q=80",
-				"TV & Home": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80",
+				Home: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80",
 				Accessories: "https://images.unsplash.com/photo-1625723044792-44de16ccb4e9?auto=format&fit=crop&w=1200&q=80"
 			};
 
 			const productImages = {
-				"iPhone 16 Pro": "https://www.wireless.walmart.ca/wp-content/uploads/2024/09/iPhone-16-Pro.jpg",
-				"iPhone 16": "http://shop.mobileklinik.ca/cdn/shop/files/AppleiPhone16ProMaxtitanium.png?v=1767881262",
-				"MacBook Pro 14-inch": "https://photographylife.com/wp-content/uploads/2022/06/Apple_MacBook-Pro_14-16-inch_10182021-1.jpg",
-				"MacBook Air 13-inch": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-silver-select-202503?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1741885366625",
-				"iMac 24-inch": "https://webobjects2.cdw.com/is/image/CDW/8137228?wid=784&hei=477&resMode=bilin&fit=fit,1",
-				"iPad Pro": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111979_ipad-pro-12-2018.png",
-				"iPad mini": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-mini-finish-select-gallery-202410-purple-wifi_AV1_FMT_WHH?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=eDJDc00wczl1QWk5QmpVYitFNXQwN0Y2ME45L1lWWDhkYWVYaTNEZnBvRGIxemtSR2ZlN0Q2dGRSdEhqcFlia1dOQTNDM3hVRmI5ME1XSURJdUNJTU9OTHlWMldRSVkrK2JXakh2ZVlwWUM4VzdPRjFweXV0dDJSWTFJd1Q3Y0NxUFk0SlBWbUc4bm1DcGNtR2l4Y0h2R1BiWkdONWxmUjlTekdkU0JaZFRv&traceId=1",
-				"Apple Watch Series 10": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121202-apple-watch-series-10.png",
-				"Apple Watch Ultra 2": "https://m.media-amazon.com/images/I/71-xIGZiLVL.jpg",
-				"Apple Watch SE": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111853_apple-watch-se-2nd-gen.png",
-				"AirPods Pro 2": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111851_sp880-airpods-Pro-2nd-gen.png",
-				"AirPods 4": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-4-anc-select-202409_FMT_WHH?wid=752&hei=636&fmt=jpeg&qlt=90&.v=1725502639798",
-				"AirPods Max": "https://webobjects2.cdw.com/is/image/CDW/8084521?wid=784&hei=477&resMode=bilin&fit=fit,1",
-				"HomePod mini": "https://www.apple.com/newsroom/images/2024/07/apple-introduces-homepod-mini-in-midnight/tile/Apple-HomePod-mini-midnight-lp.jpg.news_app_ed.jpg",
-				"Apple TV 4K": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/apple-tv-4k-hero-select-202210_FMT_WHH?wid=640&hei=600&fmt=jpeg&qlt=90&.v=a3VoZW85YUhreXN3ZFlSUDc3a0tqdlRjVUpERFZzUktXVTBUUFNkS25kMUdkaGRGdVBIV1JWUy9iQmVpZSt1K2xVWFZoelI3dzVQNk1XQ0tEU3JnellQN1hidmdzWnFFZndUalVKdDdBVkdjMGJLNU85a0UyUEVZc05QV01JZ08",
-				"Studio Display": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/studio-display-og-202603?wid=1200&hei=630&fmt=jpeg&qlt=90&.v=1770765709335",
-				"Magic Keyboard": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXCL3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=S1pkeVJDY2FBQ0dESk1WYXJ4V1Yxd2tuVHYzMERCZURia3c5SzJFOTlPam52L09kbzNiSStKOHg1RWFmMk9ZeHNPTTVzYTczc3ZWbTJwM0wxQ1JUSEE",
-				"Magic Trackpad": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXK93?wid=4000&hei=4000&fmt=jpeg&qlt=90&.v=1730508284008",
-				"USB-C Digital AV Adapter": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MUF82?wid=1144&hei=1144&fmt=jpeg&qlt=95&.v=1590526633000"
+				"Nova Phone X1 Pro": "https://www.wireless.walmart.ca/wp-content/uploads/2024/09/iPhone-16-Pro.jpg",
+				"Nova Phone X1": "http://shop.mobileklinik.ca/cdn/shop/files/AppleiPhone16ProMaxtitanium.png?v=1767881262",
+				"NovaBook Pro 14": "https://photographylife.com/wp-content/uploads/2022/06/Apple_MacBook-Pro_14-16-inch_10182021-1.jpg",
+				"NovaBook Air 14": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-silver-select-202503?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1741885366625",
+				"NovaDesk One 24": "https://webobjects2.cdw.com/is/image/CDW/8137228?wid=784&hei=477&resMode=bilin&fit=fit,1",
+				"Nova Tab Pro": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111979_ipad-pro-12-2018.png",
+				"Nova Tab Mini": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-mini-finish-select-gallery-202410-purple-wifi_AV1_FMT_WHH?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=eDJDc00wczl1QWk5QmpVYitFNXQwN0Y2ME45L1lWWDhkYWVYaTNEZnBvRGIxemtSR2ZlN0Q2dGRSdEhqcFlia1dOQTNDM3hVRmI5ME1XSURJdUNJTU9OTHlWMldRSVkrK2JXakh2ZVlwWUM4VzdPRjFweXV0dDJSWTFJd1Q3Y0NxUFk0SlBWbUc4bm1DcGNtR2l4Y0h2R1BiWkdONWxmUjlTekdkU0JaZFRv&traceId=1",
+				"Nova Watch S10": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121202-apple-watch-series-10.png",
+				"Nova Watch Ultra 2": "https://m.media-amazon.com/images/I/71-xIGZiLVL.jpg",
+				"Nova Watch SE": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111853_apple-watch-se-2nd-gen.png",
+				"Nova Buds Pro 2": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111851_sp880-airpods-Pro-2nd-gen.png",
+				"Nova Buds 4": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-4-anc-select-202409_FMT_WHH?wid=752&hei=636&fmt=jpeg&qlt=90&.v=1725502639798",
+				"Nova Buds Max": "https://webobjects2.cdw.com/is/image/CDW/8084521?wid=784&hei=477&resMode=bilin&fit=fit,1",
+				"Nova Pod Mini": "https://www.apple.com/newsroom/images/2024/07/apple-introduces-homepod-mini-in-midnight/tile/Apple-HomePod-mini-midnight-lp.jpg.news_app_ed.jpg",
+				"Nova TV Hub 4K": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/apple-tv-4k-hero-select-202210_FMT_WHH?wid=640&hei=600&fmt=jpeg&qlt=90&.v=a3VoZW85YUhreXN3ZFlSUDc3a0tqdlRjVUpERFZzUktXVTBUUFNkS25kMUdkaGRGdVBIV1JWUy9iQmVpZSt1K2xVWFZoelI3dzVQNk1XQ0tEU3JnellQN1hidmdzWnFFZndUalVKdDdBVkdjMGJLNU85a0UyUEVZc05QV01JZ08",
+				"Nova Studio Display": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/studio-display-og-202603?wid=1200&hei=630&fmt=jpeg&qlt=90&.v=1770765709335",
+				"Nova Keyboard": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXCL3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=S1pkeVJDY2FBQ0dESk1WYXJ4V1Yxd2tuVHYzMERCZURia3c5SzJFOTlPam52L09kbzNiSStKOHg1RWFmMk9ZeHNPTTVzYTczc3ZWbTJwM0wxQ1JUSEE",
+				"Nova Trackpad": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXK93?wid=4000&hei=4000&fmt=jpeg&qlt=90&.v=1730508284008",
+				"Nova USB-C AV Adapter": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MUF82?wid=1144&hei=1144&fmt=jpeg&qlt=95&.v=1590526633000"
 			};
 
 			const categoryFilter = root.querySelector("#apCategoryFilter");
