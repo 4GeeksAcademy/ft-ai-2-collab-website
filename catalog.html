@@ -312,6 +312,12 @@
 
 			const categories = [...new Set(products.map((product) => product.category))];
 			const generations = [...new Set(products.flatMap((product) => product.generation))];
+			const categoryAliasMap = {
+				phones: "Phones",
+				laptops: "Laptops",
+				tablets: "Tablets",
+				accessories: "Accessories"
+			};
 
 			function populateFilters() {
 				categories.forEach((category) => {
@@ -327,6 +333,30 @@
 					option.textContent = generation;
 					generationFilter.appendChild(option);
 				});
+			}
+
+			function resolveCategoryFromQuery(rawCategory) {
+				if (!rawCategory) {
+					return "all";
+				}
+
+				const normalized = rawCategory.trim().toLowerCase();
+				const mappedCategory = categoryAliasMap[normalized];
+				if (mappedCategory) {
+					return mappedCategory;
+				}
+
+				const matchedCategory = categories.find((category) => category.toLowerCase() === normalized);
+				return matchedCategory || "all";
+			}
+
+			function applyInitialFiltersFromQuery() {
+				const params = new URLSearchParams(window.location.search);
+				const categoryFromQuery = resolveCategoryFromQuery(params.get("category"));
+
+				if (categoryFromQuery !== "all") {
+					categoryFilter.value = categoryFromQuery;
+				}
 			}
 
 			function renderProducts() {
@@ -369,6 +399,7 @@
 			generationFilter.addEventListener("change", renderProducts);
 
 			populateFilters();
+			applyInitialFiltersFromQuery();
 			renderProducts();
 		})();
 	</script>
