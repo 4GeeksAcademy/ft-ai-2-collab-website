@@ -69,11 +69,11 @@ We are building a visual and functional e-commerce prototype inspired by Apple, 
 
 ### Cart
 
-- [ ] Reusable Navbar
-- [ ] Reusable Footer
-- [ ] Full-page cart layout
-- [ ] List of 3 sample items with thumbnails, price, quantity, and line total
-- [ ] Summary box with subtotal, tax, and total
+- [x] Reusable navbar
+- [x] Reusable footer
+- [x] Full-page cart layout
+- [x] List of 3 sample items with thumbnails, price, quantity, and line total
+- [x] Summary box with subtotal, tax, and total
 
 ### Payment Form (Checkout)
 
