@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Apple Store - Catalog</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<style>
+		:root {
+			--ap-primary: #0071E3;
+			--ap-secondary: #34C759;
+			--ap-bg: #F5F5F7;
+			--ap-white: #FFFFFF;
+			--ap-surface: #E5E5EA;
+			--ap-border: #D1D1D6;
+			--ap-text-primary: #1C1C1E;
+			--ap-text-secondary: #6E6E73;
+		}
+
+		body {
+			font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+			background: var(--ap-bg);
+			color: var(--ap-text-primary);
+		}
+
+		#ap-catalog-root a:focus-visible,
+		#ap-catalog-root button:focus-visible,
+		#ap-catalog-root select:focus-visible {
+			outline: 2px solid var(--ap-primary);
+			outline-offset: 2px;
+		}
+	</style>
+</head>
+<body>
+	<div id="ap-catalog-root" class="relative min-h-screen bg-[#F5F5F7] text-[#1C1C1E] antialiased">
+	<div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(0,113,227,0.12),transparent_34%),radial-gradient(circle_at_80%_100%,rgba(52,199,89,0.10),transparent_45%)]"></div>
+
+	<header class="sticky top-0 z-30 border-b border-[#E5E5EA] bg-white/85 shadow-sm backdrop-blur-xl">
+		<div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-3 sm:px-6 lg:px-8">
+			<div class="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#E5E5EA] bg-white px-3 py-3">
+				<a
+					href="index.html"
+					class="inline-flex items-center gap-2 rounded-md px-2 py-1 text-lg font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+					aria-label="NovaStore homepage"
+				>
+					<span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#0071E3] text-sm font-bold text-white">N</span>
+					<span>NovaStore</span>
+				</a>
+
+				<form class="order-3 w-full sm:order-2 sm:w-auto sm:flex-1 sm:max-w-xl" action="catalog.html" method="get">
+					<label for="site-search" class="sr-only">Search products</label>
+					<div class="relative">
+						<svg aria-hidden="true" viewBox="0 0 24 24" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6E6E73]">
+							<path fill="currentColor" d="M10 3a7 7 0 1 0 4.47 12.39l4.57 4.57 1.41-1.41-4.57-4.57A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10a5 5 0 0 1 0-10Z" />
+						</svg>
+						<input
+							id="site-search"
+							name="q"
+							type="search"
+							placeholder="Search phones, laptops, tablets, accessories"
+							class="w-full rounded-xl border border-[#D1D1D6] bg-[#F5F5F7] py-2.5 pl-9 pr-4 text-base text-[#1C1C1E] placeholder:text-[#6E6E73] focus-visible:border-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+						/>
+					</div>
+				</form>
+
+				<div class="order-2 flex items-center gap-2 sm:order-3">
+					<a
+						href="account.html"
+						class="rounded-lg border border-[#D1D1D6] bg-white px-3 py-2 text-sm font-medium text-[#1C1C1E] transition hover:border-[#0071E3] hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+					>
+						Account
+					</a>
+					<a
+						href="cart.html"
+						class="inline-flex items-center gap-2 rounded-lg bg-[#0071E3] px-3 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-[#005fbe] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
+					>
+						<span class="inline-block h-2 w-2 rounded-full bg-[#34C759]"></span>
+						Cart
+					</a>
+				</div>
+			</div>
+
+			<nav aria-label="Primary" class="overflow-x-auto">
+				<ul class="flex min-w-max items-center gap-2 text-sm text-[#6E6E73]">
+					<li>
+						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="index.html">Home</a>
+					</li>
+					<li>
+						<a class="rounded-md bg-[#E9F2FD] px-3 py-2 font-medium text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html">Catalog</a>
+					</li>
+					<li>
+						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=phones">Phones</a>
+					</li>
+					<li>
+						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=laptops">Laptops</a>
+					</li>
+					<li>
+						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=tablets">Tablets</a>
+					</li>
+					<li>
+						<a class="rounded-md px-3 py-2 transition hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=accessories">Accessories</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="px-4 pb-14 pt-8 md:px-8 lg:px-14">
+		<section id="ap-catalog" class="mx-auto w-full max-w-7xl rounded-[2.25rem] border border-[#D1D1D6]/70 bg-white/90 p-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-10">
+			<div class="mx-auto max-w-3xl text-center">
+				<p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#0071E3]">Apple Product Lineup</p>
+				<h1 class="mt-3 text-4xl font-semibold leading-tight tracking-tight text-slate-900 md:text-6xl">Catalog</h1>
+				<p class="mt-4 text-sm leading-relaxed text-[#6E6E73] md:text-base">Explore iPhone, Mac, iPad, Watch, and accessories. Filter by product family and generation to compare the latest Apple devices.</p>
+			</div>
+
+			<div role="region" aria-label="Product filters" class="mx-auto mt-8 flex max-w-5xl flex-col gap-4 rounded-3xl border border-[#D1D1D6]/70 bg-white p-4 shadow-[0_8px_24px_rgba(15,23,42,0.05)] sm:flex-row sm:flex-wrap sm:items-end sm:p-5">
+				<div class="w-full min-w-0 sm:min-w-[190px] sm:flex-1">
+					<label for="apCategoryFilter" class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6E6E73]">Product family</label>
+					<select id="apCategoryFilter" name="apCategoryFilter" class="w-full rounded-2xl border border-[#D1D1D6] bg-[#F5F5F7] px-3 py-2.5 text-sm text-[#1C1C1E] outline-none transition focus:border-[#0071E3] focus:bg-white focus:ring-4 focus:ring-[#0071E3]/20">
+						<option value="all">All</option>
+					</select>
+				</div>
+
+				<div class="w-full min-w-0 sm:min-w-[170px] sm:flex-1">
+					<label for="apGenerationFilter" class="mb-2 block text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6E6E73]">Generation</label>
+					<select id="apGenerationFilter" name="apGenerationFilter" class="w-full rounded-2xl border border-[#D1D1D6] bg-[#F5F5F7] px-3 py-2.5 text-sm text-[#1C1C1E] outline-none transition focus:border-[#0071E3] focus:bg-white focus:ring-4 focus:ring-[#0071E3]/20">
+						<option value="all">All</option>
+					</select>
+				</div>
+
+				<p id="apResultCount" aria-live="polite" class="w-full rounded-2xl bg-[#E5E5EA] px-3 py-2.5 text-center text-sm font-semibold text-[#1C1C1E] sm:ml-auto sm:w-auto"></p>
+			</div>
+
+			<div id="apProductGrid" aria-live="polite" class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
+		</section>
+	</main>
+
+	<footer class="border-t border-[#E5E5EA] bg-white">
+		<div class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+			<section aria-labelledby="footer-pages">
+				<h2 id="footer-pages" class="text-lg font-semibold">Pages</h2>
+				<ul class="mt-3 space-y-2 text-[#6E6E73]">
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="index.html">Home</a></li>
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html">Catalog</a></li>
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="cart.html">Cart</a></li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="footer-categories">
+				<h2 id="footer-categories" class="text-lg font-semibold">Categories</h2>
+				<ul class="mt-3 space-y-2 text-[#6E6E73]">
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=phones">Phones</a></li>
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=laptops">Laptops</a></li>
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=tablets">Tablets</a></li>
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="catalog.html?category=accessories">Accessories</a></li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="footer-legal">
+				<h2 id="footer-legal" class="text-lg font-semibold">Legal</h2>
+				<ul class="mt-3 space-y-2 text-[#6E6E73]">
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="terms-and-conditions.html">Terms and Conditions</a></li>
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="privacy-policy.html">Privacy Policy</a></li>
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="about-brand.html">About the Brand</a></li>
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="shipping.html">Shipping</a></li>
+					<li><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="returns.html">Returns</a></li>
+				</ul>
+			</section>
+
+			<section aria-labelledby="footer-contact">
+				<h2 id="footer-contact" class="text-lg font-semibold">Contact</h2>
+				<address class="mt-3 not-italic text-[#6E6E73]">
+					<p>NovaStore Support</p>
+					<p class="mt-2"><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="mailto:support@novastore.com">support@novastore.com</a></p>
+					<p class="mt-2"><a class="hover:text-[#0071E3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]" href="tel:+18005550140">+1 (800) 555-0140</a></p>
+					<p class="mt-2">Mon-Fri, 9:00 AM-6:00 PM</p>
+				</address>
+			</section>
+		</div>
+		<div class="border-t border-[#E5E5EA] px-4 py-4 text-center text-sm text-[#6E6E73] sm:px-6 lg:px-8">
+			© 2026 NovaStore. Built for educational prototype purposes.
+		</div>
+	</footer>
+	</div>
+
+	<script>
+		(() => {
+			const root = document.getElementById("ap-catalog-root");
+			if (!root) {
+				return;
+			}
+
+			const products = [
+			{ name: "iPhone 16 Pro", category: "iPhone", price: "From $999", generation: ["Latest", "Pro"] },
+			{ name: "iPhone 16", category: "iPhone", price: "From $799", generation: ["Latest", "Standard"] },
+			{ name: "MacBook Pro 14-inch", category: "Mac", price: "From $1,999", generation: ["M4", "Pro"] },
+			{ name: "MacBook Air 13-inch", category: "Mac", price: "From $1,099", generation: ["M3", "Air"] },
+			{ name: "iMac 24-inch", category: "Mac", price: "From $1,299", generation: ["M3", "Desktop"] },
+			{ name: "iPad Pro", category: "iPad", price: "From $999", generation: ["M4", "Pro"] },
+			{ name: "iPad Air", category: "iPad", price: "From $599", generation: ["M2", "Air"] },
+			{ name: "iPad mini", category: "iPad", price: "From $499", generation: ["A17 Pro", "Mini"] },
+			{ name: "Apple Watch Series 10", category: "Watch", price: "From $399", generation: ["Latest", "Standard"] },
+			{ name: "Apple Watch Ultra 2", category: "Watch", price: "From $799", generation: ["Latest", "Ultra"] },
+			{ name: "Apple Watch SE", category: "Watch", price: "From $249", generation: ["Current", "SE"] },
+			{ name: "AirPods Pro 2", category: "Audio", price: "$249", generation: ["Current", "Pro"] },
+			{ name: "AirPods 4", category: "Audio", price: "$179", generation: ["Latest", "Standard"] },
+			{ name: "AirPods Max", category: "Audio", price: "$549", generation: ["Current", "Max"] },
+			{ name: "HomePod mini", category: "Audio", price: "$99", generation: ["Current", "Home"] },
+			{ name: "Apple TV 4K", category: "TV & Home", price: "$129", generation: ["Current", "4K"] },
+			{ name: "Studio Display", category: "Accessories", price: "From $1,599", generation: ["Current", "Display"] },
+			{ name: "Magic Keyboard", category: "Accessories", price: "$299", generation: ["Current", "Input"] },
+			{ name: "Magic Trackpad", category: "Accessories", price: "$129", generation: ["Current", "Input"] },
+			{ name: "USB-C Digital AV Adapter", category: "Accessories", price: "$69", generation: ["Current", "Adapter"] }
+			];
+
+			const categoryImages = {
+				iPhone: "https://images.unsplash.com/photo-1592286646432-3b0a4f9f4f4a?auto=format&fit=crop&w=1200&q=80",
+				Mac: "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
+				iPad: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=1200&q=80",
+				Watch: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=1200&q=80",
+				Audio: "https://images.unsplash.com/photo-1606400082777-ef05f3c5cde2?auto=format&fit=crop&w=1200&q=80",
+				"TV & Home": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1200&q=80",
+				Accessories: "https://images.unsplash.com/photo-1625723044792-44de16ccb4e9?auto=format&fit=crop&w=1200&q=80"
+			};
+
+			const productImages = {
+				"iPhone 16 Pro": "https://www.wireless.walmart.ca/wp-content/uploads/2024/09/iPhone-16-Pro.jpg",
+				"iPhone 16": "http://shop.mobileklinik.ca/cdn/shop/files/AppleiPhone16ProMaxtitanium.png?v=1767881262",
+				"MacBook Pro 14-inch": "https://photographylife.com/wp-content/uploads/2022/06/Apple_MacBook-Pro_14-16-inch_10182021-1.jpg",
+				"MacBook Air 13-inch": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-silver-select-202503?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1741885366625",
+				"iMac 24-inch": "https://webobjects2.cdw.com/is/image/CDW/8137228?wid=784&hei=477&resMode=bilin&fit=fit,1",
+				"iPad Pro": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111979_ipad-pro-12-2018.png",
+				"iPad mini": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-mini-finish-select-gallery-202410-purple-wifi_AV1_FMT_WHH?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=eDJDc00wczl1QWk5QmpVYitFNXQwN0Y2ME45L1lWWDhkYWVYaTNEZnBvRGIxemtSR2ZlN0Q2dGRSdEhqcFlia1dOQTNDM3hVRmI5ME1XSURJdUNJTU9OTHlWMldRSVkrK2JXakh2ZVlwWUM4VzdPRjFweXV0dDJSWTFJd1Q3Y0NxUFk0SlBWbUc4bm1DcGNtR2l4Y0h2R1BiWkdONWxmUjlTekdkU0JaZFRv&traceId=1",
+				"Apple Watch Series 10": "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/121202-apple-watch-series-10.png",
+				"Apple Watch Ultra 2": "https://m.media-amazon.com/images/I/71-xIGZiLVL.jpg",
+				"Apple Watch SE": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111853_apple-watch-se-2nd-gen.png",
+				"AirPods Pro 2": "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111851_sp880-airpods-Pro-2nd-gen.png",
+				"AirPods 4": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-4-anc-select-202409_FMT_WHH?wid=752&hei=636&fmt=jpeg&qlt=90&.v=1725502639798",
+				"AirPods Max": "https://webobjects2.cdw.com/is/image/CDW/8084521?wid=784&hei=477&resMode=bilin&fit=fit,1",
+				"HomePod mini": "https://www.apple.com/newsroom/images/2024/07/apple-introduces-homepod-mini-in-midnight/tile/Apple-HomePod-mini-midnight-lp.jpg.news_app_ed.jpg",
+				"Apple TV 4K": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/apple-tv-4k-hero-select-202210_FMT_WHH?wid=640&hei=600&fmt=jpeg&qlt=90&.v=a3VoZW85YUhreXN3ZFlSUDc3a0tqdlRjVUpERFZzUktXVTBUUFNkS25kMUdkaGRGdVBIV1JWUy9iQmVpZSt1K2xVWFZoelI3dzVQNk1XQ0tEU3JnellQN1hidmdzWnFFZndUalVKdDdBVkdjMGJLNU85a0UyUEVZc05QV01JZ08",
+				"Studio Display": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/studio-display-og-202603?wid=1200&hei=630&fmt=jpeg&qlt=90&.v=1770765709335",
+				"Magic Keyboard": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXCL3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=S1pkeVJDY2FBQ0dESk1WYXJ4V1Yxd2tuVHYzMERCZURia3c5SzJFOTlPam52L09kbzNiSStKOHg1RWFmMk9ZeHNPTTVzYTczc3ZWbTJwM0wxQ1JUSEE",
+				"Magic Trackpad": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MXK93?wid=4000&hei=4000&fmt=jpeg&qlt=90&.v=1730508284008",
+				"USB-C Digital AV Adapter": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MUF82?wid=1144&hei=1144&fmt=jpeg&qlt=95&.v=1590526633000"
+			};
+
+			const categoryFilter = root.querySelector("#apCategoryFilter");
+			const generationFilter = root.querySelector("#apGenerationFilter");
+			const productGrid = root.querySelector("#apProductGrid");
+			const resultCount = root.querySelector("#apResultCount");
+
+			if (!categoryFilter || !generationFilter || !productGrid || !resultCount) {
+				return;
+			}
+
+			const categories = [...new Set(products.map((product) => product.category))];
+			const generations = [...new Set(products.flatMap((product) => product.generation))];
+
+			function populateFilters() {
+				categories.forEach((category) => {
+					const option = document.createElement("option");
+					option.value = category;
+					option.textContent = category;
+					categoryFilter.appendChild(option);
+				});
+
+				generations.forEach((generation) => {
+					const option = document.createElement("option");
+					option.value = generation;
+					option.textContent = generation;
+					generationFilter.appendChild(option);
+				});
+			}
+
+			function renderProducts() {
+				const selectedCategory = categoryFilter.value;
+				const selectedGeneration = generationFilter.value;
+
+				const filteredProducts = products.filter((product) => {
+					const categoryMatch = selectedCategory === "all" || product.category === selectedCategory;
+					const generationMatch = selectedGeneration === "all" || product.generation.includes(selectedGeneration);
+					return categoryMatch && generationMatch;
+				});
+
+				productGrid.innerHTML = "";
+
+				filteredProducts.forEach((product) => {
+					const card = document.createElement("article");
+					card.className = "group rounded-3xl border border-[#D1D1D6]/80 bg-gradient-to-b from-white to-[#F5F5F7] p-5 shadow-[0_6px_18px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#0071E3]/40 hover:shadow-[0_14px_28px_rgba(15,23,42,0.10)]";
+
+					card.innerHTML = `
+						<div class="overflow-hidden rounded-2xl border border-[#D1D1D6]/70 bg-white">
+							<img src="${productImages[product.name] || categoryImages[product.category] || categoryImages.Accessories}" alt="${product.name}" loading="lazy" class="h-36 w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
+						</div>
+						<p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6E6E73]">${product.category}</p>
+						<h2 class="mt-2 text-[17px] font-semibold leading-snug tracking-tight text-[#1C1C1E]">${product.name}</h2>
+						<p class="mt-3 text-sm font-semibold text-[#0071E3]">${product.price}</p>
+						<p class="mt-5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6E6E73]">Generation tags</p>
+						<div class="mt-2 flex flex-wrap gap-2">
+							${product.generation.map((generation) => `<span class="rounded-full border border-[#D1D1D6] bg-white px-2.5 py-1 text-[11px] font-semibold text-[#6E6E73]">${generation}</span>`).join("")}
+						</div>
+						<button class="mt-5 inline-flex items-center rounded-full bg-[#0071E3] px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition hover:bg-[#005BB5] focus:ring-4 focus:ring-[#0071E3]/20">View model</button>
+					`;
+
+					productGrid.appendChild(card);
+				});
+
+				resultCount.textContent = `${filteredProducts.length} product(s) shown`;
+			}
+
+			categoryFilter.addEventListener("change", renderProducts);
+			generationFilter.addEventListener("change", renderProducts);
+
+			populateFilters();
+			renderProducts();
+		})();
+	</script>
+</body>
+</html>
